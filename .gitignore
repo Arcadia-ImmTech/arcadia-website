@@ -1,0 +1,10 @@
+# This repo becomes a PUBLIC website. Only the site's own files belong here.
+# Never add client documents, case data, internal docs, or secrets.
+.env
+.env.*
+*.pdf
+*.heic
+*.docx
+*.xlsx
+.DS_Store
+node_modules/
