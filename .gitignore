@@ -8,3 +8,6 @@
 *.xlsx
 .DS_Store
 node_modules/
+
+# Local-only start file (Murphy previews the site with it); not part of the public site.
+Open Website Locally.command
