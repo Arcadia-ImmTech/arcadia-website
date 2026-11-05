@@ -4,7 +4,8 @@
 
 // Where the form is sent: the Google Apps Script web app in Arcadia's Google Workspace, which emails both founders.
 // While it's empty, the form opens the visitor's own email app with the request filled in instead.
-const INQUIRY_ENDPOINT = "";
+const INQUIRY_ENDPOINT =
+  "https://script.google.com/macros/s/AKfycbyax7s4-FwY9X4KJt0L1SY9w_f7TtKAqBSMyNi2GweoE8VcLxGV4SzOjEIle9dUUkvNLQ/exec";
 const INQUIRY_EMAILS = "murphy@arcadiaimmtech.com,leon.li@arcadiaimmtech.com";
 
 // A thin line under the header once the page scrolls.
