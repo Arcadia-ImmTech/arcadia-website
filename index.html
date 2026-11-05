@@ -1,18 +1,22 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Arcadia · Case preparation for immigration law firms</title>
-  <meta name="description" content="Arcadia reads your clients' documents, checks names, dates and addresses across every page, and hands your attorney an issues report and an organized packet index. Arcadia informs; attorneys advise.">
+  <title>Arcadia · The AI case system for immigration law firms</title>
+  <meta name="description" content="Arcadia brings every case, client, document and deadline into one intelligent system, so your immigration firm works as one team and your attorneys get back to practicing law.">
   <meta name="theme-color" content="#f6efe3">
-  <meta property="og:title" content="Arcadia · Case preparation for immigration law firms">
-  <meta property="og:description" content="A checked, complete packet, ready for your review. Built for small immigration law firms.">
+  <meta property="og:title" content="Arcadia · The AI case system for immigration law firms">
+  <meta property="og:description" content="Every case, every client, every deadline. One firm.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arcadiaimmtech.com/">
+  <meta property="og:image" content="https://arcadiaimmtech.com/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preload" href="assets/fonts/Manrope-Variable.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="assets/styles.css">
+  <script>document.documentElement.classList.remove("no-js");</script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -21,209 +25,317 @@
     <div class="wrap">
       <a class="wordmark" href="#top" aria-label="arcadia, back to top"><span aria-hidden="true">arcad</span><span class="i" aria-hidden="true">ı</span><span aria-hidden="true">a</span></a>
       <nav class="nav" aria-label="Main">
-        <a href="#how">How it works</a>
-        <a href="#checks">What we check</a>
-        <a href="#principles">Principles</a>
+        <a href="#why">Why Arcadia</a>
+        <a href="#inside">A look inside</a>
         <a href="#team">Team</a>
-        <a class="btn btn-primary" href="#partners">Become a design partner</a>
+        <a class="btn btn-primary" href="#demo" data-invite>Request a demo</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
+    <!-- Hero -->
     <section class="hero">
       <div class="wrap">
         <div>
-          <p class="eyebrow">Case preparation for immigration law firms</p>
-          <h1>A checked, complete packet, <span class="accent">ready for your review.</span></h1>
-          <p class="lede">Arcadia reads your clients' documents, checks names, dates and addresses across every page, and hands your attorney an issues report and an organized packet index. Starting with marriage-based green card cases.</p>
+          <p class="eyebrow">The AI case system for immigration law firms</p>
+          <h1>Every case, every client, every deadline. <span class="accent nowrap">One firm.</span></h1>
+          <p class="lede">Arcadia takes the paperwork, follow-ups and cross-checking off your team's desk. Every case keeps moving, every date stays in sight, and your attorneys get back to practicing law.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#partners">Become a design partner</a>
-            <a class="btn btn-quiet" href="#how">See how it works</a>
+            <a class="btn btn-primary" href="#demo" data-invite>Request a private demo <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="btn btn-quiet" href="#inside">Take a look inside</a>
           </div>
-          <p class="hero-note">Arcadia informs; attorneys advise. Every finding cites the document and page it came from.</p>
+          <ul class="trust">
+            <li>Built on USCIS's current forms and official guidance</li>
+            <li>Clients served in English, Spanish and Chinese</li>
+            <li>Made only for law firms</li>
+          </ul>
         </div>
 
-        <figure class="report-card" aria-label="Example of an Arcadia issues report, with fictional data">
-          <div class="report-top">
-            <strong>Issues report</strong>
-            <span class="report-tag">Sample · fictional case</span>
+        <figure class="glimpse reveal" aria-label="A glimpse of Arcadia, with fictional sample cases">
+          <div class="window">
+            <div class="window-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+            <img class="shot" src="assets/img/hero.jpg" width="1400" height="862" alt="Arcadia's case dashboard: cases grouped by where they stand, and the dates coming up on filed cases, each read from its notice." fetchpriority="high">
           </div>
-          <div class="finding">
-            <span class="sev sev-inconsistent">Inconsistent</span>
-            <p>Beneficiary's name is spelled differently on the passport and the marriage certificate. Confirm with attorney.</p>
-            <span class="cite">passport.pdf p.1 · marriage-certificate.pdf p.1</span>
+          <div class="float float-ready" aria-hidden="true">
+            <span class="kicker">Ready for review</span>
+            <strong>Whitfield &amp; Reyes Castillo</strong>
+            <small>Documents and forms complete</small>
+            <div class="meter"><i></i></div>
           </div>
-          <div class="finding">
-            <span class="sev sev-missing">Missing</span>
-            <p>No birth certificate found for the beneficiary.</p>
-            <span class="cite">Checklist item: birth certificate</span>
+          <div class="float float-chat" aria-hidden="true">
+            <span class="kicker">Client message</span>
+            <div class="bubble" lang="zh-Hans">我已经填好问卷了。</div>
+            <small>“I've finished the questionnaire.” · translated for your team</small>
           </div>
-          <div class="finding">
-            <span class="sev sev-review">Needs review</span>
-            <p>Divorce decree is in Spanish. No certified English translation found in the folder.</p>
-            <span class="cite">divorce-decree.pdf p.1–2</span>
-          </div>
-          <div class="finding">
-            <span class="sev sev-info">Info</span>
-            <p>Petitioner's passport expires in 5 months.</p>
-            <span class="cite">passport-petitioner.pdf p.1</span>
-          </div>
-          <figcaption class="report-foot">Prepared by Arcadia for attorney review. Not legal advice.</figcaption>
         </figure>
       </div>
     </section>
 
-    <section aria-labelledby="problem-title">
+    <!-- The pain -->
+    <section class="band" id="why" aria-labelledby="why-title">
       <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">The problem</p>
-          <h2 id="problem-title">Your team's best hours go to cross-checking paper.</h2>
+        <div class="section-head reveal">
+          <p class="eyebrow">Sound familiar?</p>
+          <h2 id="why-title">Immigration practice still runs on paper, inboxes and memory.</h2>
+          <p class="lede">Every firm we talk to describes the same week: great people, buried in work that never shows up on an invoice.</p>
         </div>
         <div class="pains">
-          <div class="pain">
-            <h3>Chasing documents</h3>
-            <p>Clients send photos, scans and emails over weeks, and someone has to keep track of what's still missing.</p>
+          <article class="pain reveal">
+            <span class="num">01</span>
+            <h3>Documents everywhere</h3>
+            <p>Clients send photos by text, WeChat, WhatsApp and email. Someone has to find them, name them and file them to the right case.</p>
+          </article>
+          <article class="pain reveal">
+            <span class="num">02</span>
+            <h3>The same facts, typed again and again</h3>
+            <p>Names, dates and addresses re-entered by hand on form after form, for every client.</p>
+          </article>
+          <article class="pain reveal">
+            <span class="num">03</span>
+            <h3>Small errors, big consequences</h3>
+            <p>A misspelled name or a date that doesn't match across documents, caught late, or not at all.</p>
+          </article>
+          <article class="pain reveal">
+            <span class="num">04</span>
+            <h3>Deadlines in someone's head</h3>
+            <p>Appointments, response dates and expiring documents tracked on sticky notes, calendars and spreadsheets.</p>
+          </article>
+          <article class="pain reveal">
+            <span class="num">05</span>
+            <h3>“What's the status of my case?”</h3>
+            <p>Calls and messages that pull your team away from the work, often in a language not everyone on staff speaks.</p>
+          </article>
+          <article class="pain reveal">
+            <span class="num">06</span>
+            <h3>Everyone works their own way</h3>
+            <p>Know-how lives with individual staff. Cases stall when someone is out, and attorneys review unfinished files late at night.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- What changes -->
+    <section aria-labelledby="change-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">What changes with Arcadia</p>
+          <h2 id="change-title">A firm that runs like <span class="accent">one team.</span></h2>
+        </div>
+        <div class="outcomes">
+          <div class="outcome reveal">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <h3>Hours back, every week</h3>
+            <p>Collecting, sorting, cross-checking and form filling are done for your team, case after case.</p>
           </div>
-          <div class="pain">
-            <h3>Checking by hand</h3>
-            <p>A name spelled two ways, a date that doesn't match, a prior marriage with no divorce decree. Small details, easy to miss across dozens of pages.</p>
+          <div class="outcome reveal">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></span>
+            <h3>Grow without adding headcount</h3>
+            <p>Take on more cases with the people you already have, and spend less on work that doesn't need a law degree.</p>
           </div>
-          <div class="pain">
-            <h3>Assembling the packet</h3>
-            <p>Matching every document to the checklist and building the index takes time your attorneys could spend on judgment.</p>
+          <div class="outcome reveal">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span>
+            <h3>Accurate, page by page</h3>
+            <p>Every document is checked against every other, and every form answer shows exactly where it came from.</p>
+          </div>
+          <div class="outcome reveal">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>
+            <h3>Every date in sight</h3>
+            <p>Appointments, response dates and expiring documents are tracked for every case, with your team reminded well ahead.</p>
+          </div>
+          <div class="outcome reveal">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></span>
+            <h3>One integrated firm</h3>
+            <p>Cases, clients, documents, forms and conversations in one place, so anyone on your team can pick up any case.</p>
+          </div>
+          <div class="outcome reveal">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5c1 1.2 2.1 1.8 3.5 1.8s2.5-.6 3.5-1.8"/><path d="M9 9.5h.01M15 9.5h.01"/></svg></span>
+            <h3>Clients who feel looked after</h3>
+            <p>They see progress and talk with your team in their own language. Happy clients come back, and send their friends.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="band" id="how" aria-labelledby="how-title">
+    <!-- A look inside -->
+    <section class="band" id="inside" aria-labelledby="inside-title">
       <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">How it works</p>
-          <h2 id="how-title">AI reads. Code checks. Your attorney decides.</h2>
+        <div class="section-head reveal">
+          <p class="eyebrow">A look inside</p>
+          <h2 id="inside-title">Your whole practice, in one place.</h2>
+          <p class="lede">A glimpse of Arcadia. The full tour is reserved for a private demo.</p>
         </div>
-        <ol class="steps">
-          <li class="step">
-            <p class="who">Your firm</p>
-            <h3>Share the case documents</h3>
-            <p>Passports, certificates, records and relationship evidence, as PDFs or phone photos, through your firm's own secure file sharing.</p>
-          </li>
-          <li class="step">
-            <p class="who">Arcadia</p>
-            <h3>Read, organize, check</h3>
-            <p>AI reads each document into structured fields and notes the page each one came from. Plain, tested code then compares them across documents and against your checklist.</p>
-          </li>
-          <li class="step">
-            <p class="who">Your attorney</p>
-            <h3>Review and decide</h3>
-            <p>You receive an issues report, an organized packet index and the extracted data. Every finding cites its source. All legal judgment stays with you.</p>
-          </li>
-        </ol>
-        <div class="motto">
-          <span>Every finding cites file and page</span>
-          <span>Neutral wording, never a verdict</span>
-          <span>Translations marked as drafts for a certified translator</span>
+        <div class="tour reveal">
+          <div class="tabs" role="tablist" aria-label="Arcadia's features">
+            <button class="tab" type="button" role="tab" id="tab-command" aria-controls="pane-command" aria-selected="true"><strong>Case command center</strong><span>Every case at a glance: what's ready for review, what's waiting on the client, and what's filed and being watched.</span></button>
+            <button class="tab" type="button" role="tab" id="tab-dates" aria-controls="pane-dates" aria-selected="false" tabindex="-1"><strong>Deadline watch</strong><span>Arcadia reads the dates on every notice and document and puts them in front of your team before they matter.</span></button>
+            <button class="tab" type="button" role="tab" id="tab-intake" aria-controls="pane-intake" aria-selected="false" tabindex="-1"><strong>Smart document intake</strong><span>Drop in a pile of files from anywhere. Arcadia names them, recognizes whose they are and files each to the right case for your team to confirm.</span></button>
+            <button class="tab" type="button" role="tab" id="tab-ready" aria-controls="pane-ready" aria-selected="false" tabindex="-1"><strong>Ready for signature</strong><span>Each case climbs to 100%: documents in, issues resolved, USCIS forms drafted from your client's information. Your attorney reviews a finished packet.</span></button>
+            <button class="tab" type="button" role="tab" id="tab-assistant" aria-controls="pane-assistant" aria-selected="false" tabindex="-1"><strong>An assistant that works ahead</strong><span>It flags what needs attention before anyone asks, and answers questions about any case with the page it came from.</span></button>
+            <button class="tab" type="button" role="tab" id="tab-clients" aria-controls="pane-clients" aria-selected="false" tabindex="-1"><strong>Your clients, in their language</strong><span>One group chat per case and a simple client view in English, Spanish or Chinese, translated for your team.</span></button>
+          </div>
+          <div class="panes">
+            <div class="pane" role="tabpanel" id="pane-command" aria-labelledby="tab-command">
+              <p class="pane-caption">Every case at a glance: what's ready for review, what's waiting on the client, and what's filed and being watched.</p>
+              <div class="window"><img class="shot" src="assets/img/command.jpg" width="1600" height="619" alt="The case dashboard, with cases grouped by where they stand." loading="lazy"></div>
+            </div>
+            <div class="pane" role="tabpanel" id="pane-dates" aria-labelledby="tab-dates" hidden>
+              <p class="pane-caption">Arcadia reads the dates on every notice and document and puts them in front of your team before they matter.</p>
+              <div class="window"><img class="shot" src="assets/img/deadlines.jpg" width="1600" height="661" alt="Upcoming dates across filed cases, such as appointments and a response due date, each with the notice it came from." loading="lazy"></div>
+            </div>
+            <div class="pane" role="tabpanel" id="pane-intake" aria-labelledby="tab-intake" hidden>
+              <p class="pane-caption">Drop in a pile of files from anywhere. Arcadia names them, recognizes whose they are and files each to the right case for your team to confirm.</p>
+              <div class="window"><img class="shot" src="assets/img/intake.jpg" width="1200" height="770" alt="Files dropped into Arcadia, each named and matched to a client's case, waiting for a person to confirm." loading="lazy"></div>
+            </div>
+            <div class="pane" role="tabpanel" id="pane-ready" aria-labelledby="tab-ready" hidden>
+              <p class="pane-caption">Each case climbs to 100%: documents in, issues resolved, USCIS forms drafted from your client's information. Your attorney reviews a finished packet.</p>
+              <div class="window"><img class="shot" src="assets/img/ready.jpg" width="830" height="576" alt="A case at 100%, ready for the attorney's review and signature." loading="lazy"></div>
+            </div>
+            <div class="pane" role="tabpanel" id="pane-assistant" aria-labelledby="tab-assistant" hidden>
+              <p class="pane-caption">It flags what needs attention before anyone asks, and answers questions about any case with the page it came from.</p>
+              <div class="window"><img class="shot tall" src="assets/img/assistant.jpg" width="713" height="1080" alt="Arcadia's assistant listing upcoming dates across cases and a new case that is set up." loading="lazy"></div>
+            </div>
+            <div class="pane" role="tabpanel" id="pane-clients" aria-labelledby="tab-clients" hidden>
+              <p class="pane-caption">One group chat per case and a simple client view in English, Spanish or Chinese, translated for your team.</p>
+              <div class="pane-pair">
+                <div class="window"><img class="shot" src="assets/img/chat.jpg" width="1200" height="648" alt="A client's message in Spanish with its English translation for the firm." loading="lazy"></div>
+                <div class="window"><img class="shot" src="assets/img/client.jpg" width="600" height="1070" alt="The client's view on a phone, in Chinese." loading="lazy"></div>
+              </div>
+            </div>
+            <p class="tour-note">Product images show fictional sample cases.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="checks" aria-labelledby="checks-title">
+    <!-- Not a chatbot -->
+    <section class="on-dark" aria-labelledby="system-title">
       <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">What Arcadia checks</p>
-          <h2 id="checks-title">The details that slow a case down.</h2>
-          <p class="lede">Each check is written as plain, tested code, so the same facts always lead to the same finding.</p>
+        <div class="section-head reveal">
+          <p class="eyebrow">Why Arcadia</p>
+          <h2 id="system-title">Not a chatbot. A case system with intelligence built in.</h2>
+          <p class="lede">Pasting documents into a general AI tool still leaves your team copying, checking and chasing. Arcadia is built around how an immigration firm actually runs.</p>
         </div>
-        <ul class="checks">
-          <li><strong>Names across documents</strong><span>Spelling, middle names and name order. Possible transliteration differences are flagged for review.</span></li>
-          <li><strong>Dates and places of birth</strong><span>Matched across every document that states them.</span></li>
-          <li><strong>Marriage details</strong><span>Date and place of marriage, consistent from document to document.</span></li>
-          <li><strong>Prior marriages</strong><span>Each one has a document ending it, dated before the current marriage.</span></li>
-          <li><strong>Passport dates</strong><span>Expired or expiring soon, noted for your attention.</span></li>
-          <li><strong>Shared-life evidence</strong><span>Addresses on documents that name both spouses, with their dates.</span></li>
-          <li><strong>Checklist coverage</strong><span>Checklist items with no matching document yet.</span></li>
-          <li><strong>Document quality</strong><span>Unreadable files, possible missing pages, and non-English documents without a certified translation.</span></li>
+        <div class="pillars">
+          <div class="pillar reveal">
+            <span class="dot" aria-hidden="true"></span>
+            <h3>It knows every case</h3>
+            <p>Every client, document, form, message and deadline lives in one system, connected to the case it belongs to.</p>
+          </div>
+          <div class="pillar reveal">
+            <span class="dot" aria-hidden="true"></span>
+            <h3>It works ahead of your team</h3>
+            <p>It notices what arrived, what's missing and what's due, and brings it to the right person before they have to ask.</p>
+          </div>
+          <div class="pillar reveal">
+            <span class="dot" aria-hidden="true"></span>
+            <h3>It keeps your firm in control</h3>
+            <p>Your team confirms every important step, and every answer shows its source, so nothing leaves the firm unchecked.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- For attorneys -->
+    <section aria-labelledby="counsel-title">
+      <div class="wrap counsel">
+        <div class="reveal">
+          <p class="eyebrow">Built for attorneys</p>
+          <h2 id="counsel-title">You practice law. <span class="accent">Arcadia runs everything around it.</span></h2>
+          <p class="lede">Arcadia never gives legal advice and never makes a legal decision. Every judgment call reaches your attorney with the facts, and where they came from, already in front of them.</p>
+        </div>
+        <ul class="promises">
+          <li class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 10"/></svg><div><strong>Your attorneys decide</strong><span>Strategy, forms and every legal call stay with your licensed attorneys. Arcadia carries out the plan.</span></div></li>
+          <li class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 10"/></svg><div><strong>Built on USCIS's own sources</strong><span>Current form editions and official guidance, each requirement linked to where it comes from.</span></div></li>
+          <li class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 10"/></svg><div><strong>Made only for law firms</strong><span>Your clients stay your clients. Nothing reaches them until someone at your firm says so.</span></div></li>
+          <li class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 10"/></svg><div><strong>Client information, handled with care</strong><span>Used only to serve your firm's cases. Never sold, never used for advertising.</span></div></li>
+          <li class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 10"/></svg><div><strong>Flat, predictable pricing</strong><span>Never a share of your legal fees.</span></div></li>
         </ul>
       </div>
     </section>
 
-    <section class="on-dark" id="principles" aria-labelledby="principles-title">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">Our principles</p>
-          <h2 id="principles-title">Arcadia informs. Attorneys advise.</h2>
-        </div>
-        <div class="principles">
-          <div class="principle">
-            <h3>No legal advice, ever</h3>
-            <p>Arcadia extracts, organizes and flags. It never says whether someone qualifies or what to file. Those calls belong to licensed attorneys.</p>
-          </div>
-          <div class="principle">
-            <h3>Built for law firms</h3>
-            <p>We work for firms, not directly with the public. Your clients stay your clients.</p>
-          </div>
-          <div class="principle">
-            <h3>Client documents, handled with care</h3>
-            <p>Documents are used only to prepare your firm's case. They are never sold, never used for advertising, and kept only as long as needed.</p>
-          </div>
-          <div class="principle">
-            <h3>Flat fees, never a share</h3>
-            <p>Firms pay flat fees. Arcadia never takes a percentage of attorney fees and never sells placement.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="partners" aria-labelledby="partners-title">
-      <div class="wrap partner">
-        <div>
-          <p class="eyebrow">Design partners</p>
-          <h2 id="partners-title">Now inviting a small group of immigration firms.</h2>
-          <p class="lede">We're working closely with a handful of small firms in Southern California to shape Arcadia around how you actually work. Our aim: a checked, complete packet, ready for your review, in days instead of weeks.</p>
-          <a class="btn btn-primary" href="mailto:murphy@arcadiaimmtech.com?subject=Arcadia%20design%20partner">Talk to us about joining</a>
-        </div>
-        <ul>
-          <li>For firms of 1 to 10 attorneys</li>
-          <li>Marriage-based adjustment of status cases first</li>
-          <li>A discounted flat fee per prepared case during the pilot</li>
-          <li>Checklists built from official USCIS instructions, each item linked to its source</li>
-          <li>A direct line to the founders, and a real say in what we build next</li>
-        </ul>
-      </div>
-    </section>
-
+    <!-- Team -->
     <section class="band" id="team" aria-labelledby="team-title">
       <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">Team</p>
-          <h2 id="team-title">Built in Irvine, California.</h2>
-          <p class="lede">Arcadia is named for a place of peace and harmony. We're building a calmer path through U.S. immigration, starting with the firms who guide people through it.</p>
+        <div class="section-head reveal">
+          <p class="eyebrow">Who we are</p>
+          <h2 id="team-title">Built by people who've seen the problem up close.</h2>
+          <p class="lede">Arcadia is named for a place of peace and harmony. We build it for the firms that guide people through the hardest part of making a life in America. Headquartered in Los Angeles, California.</p>
         </div>
         <div class="team">
-          <div class="person">
-            <div class="avatar" aria-hidden="true">MW</div>
-            <h3>Murphy Wang</h3>
-            <p class="role">Founder &amp; CEO</p>
-            <p>Murphy studied International Studies at UC Irvine. Before Arcadia he worked across many industries and roles, and opened a coffee shop straight out of school, a lesson in building something from nothing. He believes AI can bring a real leap in productivity to legal work, and founded Arcadia to help immigration attorneys spend more of their time practicing law.</p>
-          </div>
-          <div class="person">
-            <div class="avatar" aria-hidden="true">LL</div>
-            <h3>Leon Li</h3>
-            <p class="role">Co-founder &amp; CRO</p>
-            <p>Leon graduated from UC Santa Barbara and built his career in technology sales and marketing. He leads Arcadia's work with law firms, and believes software built around how small firms really work can change how legal work gets done.</p>
-          </div>
+          <article class="person reveal">
+            <header>
+              <div class="avatar" aria-hidden="true">MW</div>
+              <div>
+                <h3>Murphy Wang</h3>
+                <p class="role">Founder &amp; CEO</p>
+              </div>
+            </header>
+            <p>Murphy is a seasoned paralegal and legal intake manager. Working inside law firms, he saw the same thing every day: talented attorneys and staff buried under paperwork, chasing documents and deadlines, while clients waited for answers. He founded Arcadia to change that, building the system he wished his firm had, so attorneys can spend their time practicing law.</p>
+          </article>
+          <article class="person reveal">
+            <header>
+              <div class="avatar" aria-hidden="true">LL</div>
+              <div>
+                <h3>Leon Li</h3>
+                <p class="role">Co-founder &amp; CRO</p>
+              </div>
+            </header>
+            <p>Leon is a technology sales executive with a proven record of bringing software to market. He believes the software-as-a-service model can change how businesses, and whole industries, operate, and that a great product deserves to be seen by everyone it can help. He leads Arcadia's work with law firms.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="on-dark contact" aria-labelledby="contact-title">
+    <!-- Private demo -->
+    <section class="on-dark" id="demo" aria-labelledby="demo-title">
+      <div class="wrap invite">
+        <div class="reveal">
+          <p class="eyebrow">Private demo</p>
+          <h2 id="demo-title">See Arcadia for yourself.</h2>
+          <p class="lede">We show Arcadia privately, one firm at a time: a 30-minute walkthrough with our founder, shaped around the cases your firm handles.</p>
+          <div class="actions">
+            <button class="btn btn-primary" type="button" data-invite>Request a private demo <span class="arrow" aria-hidden="true">→</span></button>
+            <span class="email">Or write to <a href="mailto:murphy@arcadiaimmtech.com?subject=Arcadia%20demo">murphy@arcadiaimmtech.com</a></span>
+          </div>
+        </div>
+        <ol class="expect reveal" aria-label="What to expect">
+          <li><b>1</b><div><strong>Tell us about your firm</strong>Two quick questions, so the walkthrough fits your practice.</div></li>
+          <li><b>2</b><div><strong>Pick a time with Murphy</strong>Thirty minutes, by video, at a time that suits you.</div></li>
+          <li><b>3</b><div><strong>See your kind of cases</strong>Arcadia working the way your team works, with your questions answered.</div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section aria-labelledby="faq-title">
       <div class="wrap">
-        <p class="eyebrow">Get in touch</p>
-        <h2 id="contact-title">Let's talk about your caseload.</h2>
-        <p class="lede">Tell us about your firm and the cases you handle most. Please don't send client documents or case details by email.</p>
-        <a class="btn btn-primary" href="mailto:murphy@arcadiaimmtech.com?subject=Arcadia%20design%20partner">Email us</a>
-        <span class="email">murphy@arcadiaimmtech.com</span>
+        <div class="section-head center reveal">
+          <p class="eyebrow">Questions</p>
+          <h2 id="faq-title">Good to know</h2>
+        </div>
+        <div class="faq reveal">
+          <details>
+            <summary>Does Arcadia give legal advice?</summary>
+            <p>No. Arcadia is not a law firm. It organizes, checks, drafts and tracks for your firm, and brings every judgment call to your attorneys with the facts and their sources. Your attorneys make every legal decision.</p>
+          </details>
+          <details>
+            <summary>Which cases can Arcadia handle?</summary>
+            <p>Arcadia is built around USCIS's forms and the case work immigration firms do every day, and it keeps growing with them. In your demo we'll focus on the cases your firm handles most.</p>
+          </details>
+          <details>
+            <summary>How is our clients' information handled?</summary>
+            <p>Client information is used only to serve your firm's cases, under a written agreement with your firm. It's never sold and never used for advertising. Please don't send client documents or case details through this website or by email before we've agreed how to share them.</p>
+          </details>
+          <details>
+            <summary>Do our clients have to learn new software?</summary>
+            <p>Hardly. Clients see a simple view in English, Spanish or Chinese, with one task at a time and a group chat with your team. They only use it when your firm invites them.</p>
+          </details>
+          <details>
+            <summary>How do we get started?</summary>
+            <p>Request a private demo. We'll walk you through Arcadia with your kind of cases and talk about how it fits your team.</p>
+          </details>
+        </div>
       </div>
     </section>
   </main>
@@ -232,23 +344,61 @@
     <div class="wrap">
       <div>
         <span class="wordmark" aria-label="arcadia"><span aria-hidden="true">arcad</span><span class="i" aria-hidden="true">ı</span><span aria-hidden="true">a</span></span>
-        <p>Arcadia Immigration Technology, Inc. · Irvine, California</p>
+        <p>Arcadia Immigration Technology, Inc. · Headquartered in Los Angeles, California</p>
         <p>Arcadia is not a law firm and does not provide legal advice. It works for licensed immigration attorneys, who make every legal decision.</p>
         <p>© 2026 Arcadia Immigration Technology, Inc.</p>
       </div>
       <nav aria-label="Footer">
+        <a href="#demo" data-invite>Request a demo</a>
         <a href="privacy.html">Privacy</a>
         <a href="mailto:murphy@arcadiaimmtech.com">Contact</a>
       </nav>
     </div>
   </footer>
 
-  <script>
-    // Adds a thin line under the header once the page scrolls. The site has no other scripts and no tracking.
-    const header = document.querySelector(".site-header");
-    const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 8);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-  </script>
+  <!-- The invitation: two quick questions (nothing is recorded or sent anywhere), then a link to book a time. -->
+  <dialog class="invitation" id="invitation" aria-labelledby="invite-title">
+    <button class="close" type="button" aria-label="Close" data-close>×</button>
+    <div class="inner">
+      <div class="step" data-step="1">
+        <div class="steps-dots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+        <p class="eyebrow">Private demo</p>
+        <h2 id="invite-title">Private demos are reserved for immigration law firms.</h2>
+        <p>Are you an attorney or staff member at an immigration law firm?</p>
+        <div class="choices">
+          <button class="choice" type="button" data-next="2">Yes, I'm with a law firm</button>
+          <button class="choice" type="button" data-next="no">No, I need help with my own case</button>
+        </div>
+      </div>
+      <div class="step" data-step="no" hidden>
+        <p class="eyebrow">Private demo</p>
+        <h2>Arcadia works only with law firms.</h2>
+        <p>For help with your own immigration case, please contact a licensed immigration attorney.</p>
+        <button class="btn btn-quiet" type="button" data-close>Close</button>
+      </div>
+      <div class="step" data-step="2" hidden>
+        <div class="steps-dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></div>
+        <p class="eyebrow">Private demo</p>
+        <h2>How many attorneys are at your firm?</h2>
+        <p>So we can shape the walkthrough around a practice like yours.</p>
+        <div class="choices grid">
+          <button class="choice" type="button" data-next="3">Just me</button>
+          <button class="choice" type="button" data-next="3">2 to 5</button>
+          <button class="choice" type="button" data-next="3">6 to 20</button>
+          <button class="choice" type="button" data-next="3">More than 20</button>
+        </div>
+      </div>
+      <div class="step" data-step="3" hidden>
+        <div class="steps-dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></div>
+        <p class="eyebrow">You're invited</p>
+        <h2>Choose a time with Murphy.</h2>
+        <p>A private, 30-minute walkthrough of Arcadia with our founder, Murphy Wang, by video. Bring your questions and your toughest cases.</p>
+        <a class="btn btn-primary" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2ufx_Mcp6Tf9E_w0pfxBvDgCu7fQFyLEXp-ZLnNh71_r31DP5h7YwU3htG97hh9v7K9YOukeSQ?gv=true" target="_blank" rel="noopener">Choose a time <span class="arrow" aria-hidden="true">→</span></a>
+        <p class="fine">Opens Google Calendar's booking page in a new tab. Your answers here aren't recorded. Prefer email? <a href="mailto:murphy@arcadiaimmtech.com?subject=Arcadia%20demo">murphy@arcadiaimmtech.com</a></p>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="assets/site.js" defer></script>
 </body>
 </html>
