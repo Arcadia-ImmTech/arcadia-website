@@ -711,10 +711,59 @@ section {
   animation: rise 0.45s ease both;
 }
 
-.pane .shot.tall {
-  max-height: 520px;
-  width: auto;
-  margin: 0 auto;
+/* Arcadia AI: the whole panel, unfaded so its name and the box to ask a question show, with what it does beside it. */
+.assistant-pane {
+  display: grid;
+  grid-template-columns: minmax(0, 320px) 1fr;
+  gap: clamp(20px, 3vw, 36px);
+  align-items: center;
+}
+
+.window.panel {
+  border-radius: 20px;
+}
+
+.window .shot.whole {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.callouts {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.callouts li {
+  border-left: 3px solid var(--terracotta);
+  padding: 4px 0 4px 16px;
+}
+
+.callouts strong {
+  display: block;
+  font-family: var(--display);
+  font-size: 17px;
+}
+
+.callouts span {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .assistant-pane {
+    grid-template-columns: 1fr;
+  }
+
+  .window.panel {
+    max-width: 320px;
+    margin: 0 auto;
+  }
 }
 
 .pane-pair {
