@@ -474,9 +474,18 @@ section {
 
 .hero .wrap {
   display: grid;
-  grid-template-columns: 1fr 1.08fr;
+  grid-template-columns: 1.1fr 1fr;
   gap: clamp(32px, 5vw, 72px);
   align-items: center;
+}
+
+/* The headline's second half always starts its own line. */
+.hero h1 {
+  font-size: clamp(38px, 4.6vw, 55px);
+}
+
+.hero h1 .accent {
+  display: block;
 }
 
 .hero .lede {
