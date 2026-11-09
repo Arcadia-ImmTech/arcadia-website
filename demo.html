@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <title>Book a demo · Arcadia</title>
+  <meta name="description" content="See Arcadia privately: a 30-minute walkthrough with our founders, shaped around the cases your immigration firm handles.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f6efe3">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="icon" href="assets/favicon.png" type="image/png" sizes="64x64">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/SpaceGrotesk-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>document.documentElement.className = "js";</script>
+  <meta property="og:title" content="Book a demo · Arcadia">
+  <meta property="og:description" content="See Arcadia with your kind of cases.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arcadiaimmtech.com/demo.html">
+  <meta property="og:image" content="https://arcadiaimmtech.com/assets/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body data-page="demo">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-bar">
+      <a class="brand" href="index.html" aria-label="arcadia, home">
+        <svg class="wordmark" viewBox="0 0 405.59 100" aria-hidden="true"><use href="assets/brand/sprite.svg#wordmark"/></svg>
+      </a>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <a href="product.html">Product</a>
+        <a href="security.html">Security</a>
+        <a href="company.html">Company</a>
+        <a class="btn btn-primary" href="demo.html">Book a demo</a>
+      </nav>
+      <button class="menu-button" type="button" aria-controls="site-nav" aria-expanded="false">
+        <span class="sr-only">Menu</span>
+        <span class="bars" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="intro" aria-labelledby="demo-title">
+      <div class="wrap demo">
+        <div class="demo-copy">
+          <div class="head">
+            <p class="label rise">Book a demo</p>
+            <h1 class="h1 rise d1" id="demo-title">See Arcadia with your kind of cases.</h1>
+            <p class="lede rise d2">We show Arcadia privately, one firm at a time: a <span class="nowrap">30-minute</span> walkthrough with our founders, shaped around the cases your firm handles.</p>
+          </div>
+          <ol class="expect rise d3" aria-label="What happens next">
+            <li><b>1</b><div><strong>Tell us about your firm</strong>A minute of your time, so the walkthrough fits your practice.</div></li>
+            <li><b>2</b><div><strong>We reply personally</strong>Murphy or Leon will write to arrange a time that suits you.</div></li>
+            <li><b>3</b><div><strong>See your kind of cases</strong>Arcadia working the way your team works, with your questions answered.</div></li>
+          </ol>
+          <div class="demo-photo rise d3"><img src="assets/img/photo/consult-window-1600.jpg" srcset="assets/img/photo/consult-window-960.jpg 960w, assets/img/photo/consult-window-1600.jpg 1600w" sizes="(max-width: 900px) 100vw, 42vw" alt="" width="1600" height="1067" decoding="async" loading="lazy"></div>
+          <p class="inquiry-email">Prefer email? Write to <a href="mailto:murphy@arcadiaimmtech.com?subject=Arcadia%20demo">murphy@arcadiaimmtech.com</a></p>
+        </div>
+
+        <div class="form-card rise d2" id="demo">
+          <form class="inquiry-form" id="inquiry" novalidate>
+            <h2>Request a private demo</h2>
+            <p class="form-note">For immigration law firms. Please don't include client names or case details.</p>
+            <div class="fields">
+              <label class="field"><span>Full name</span><input name="name" type="text" autocomplete="name" required maxlength="120" enterkeyhint="next"></label>
+              <label class="field"><span>Work email</span><input name="email" type="email" autocomplete="email" inputmode="email" required maxlength="160" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" enterkeyhint="next"></label>
+              <label class="field"><span>Law firm</span><input name="firm" type="text" autocomplete="organization" required maxlength="160" enterkeyhint="next"></label>
+              <label class="field"><span>Phone <em>optional</em></span><input name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="40" enterkeyhint="next"></label>
+              <label class="field"><span>Your role</span>
+                <select name="role" required>
+                  <option value="" disabled selected>Choose one</option>
+                  <option>Attorney</option>
+                  <option>Paralegal or legal assistant</option>
+                  <option>Office or practice manager</option>
+                  <option>Other</option>
+                </select>
+              </label>
+              <label class="field"><span>Attorneys at your firm</span>
+                <select name="size" required>
+                  <option value="" disabled selected>Choose one</option>
+                  <option>Just me</option>
+                  <option>2 to 5</option>
+                  <option>6 to 20</option>
+                  <option>More than 20</option>
+                </select>
+              </label>
+              <label class="field wide"><span>What would you most like help with? <em>optional</em></span><textarea name="message" rows="3" maxlength="2000" placeholder="For example: collecting documents, deadlines, forms, client communication"></textarea></label>
+              <label class="check wide"><input name="lawFirm" type="checkbox" value="yes" required><span>I work at an immigration law firm. Arcadia works only with law firms; for help with your own case, please contact a licensed attorney.</span></label>
+              <!-- Left empty by people; bots fill it in, and the request is then ignored. -->
+              <label class="trap" aria-hidden="true">Website<input name="website" type="text" tabindex="-1" autocomplete="off"></label>
+              <input type="hidden" name="started">
+            </div>
+            <p class="form-error" role="alert" hidden></p>
+            <button class="btn btn-primary submit" type="submit">Request a private demo <span class="arrow" aria-hidden="true">&rarr;</span></button>
+            <p class="form-fine">We use your details only to reply to you. See our <a href="privacy.html">privacy notice</a>.</p>
+          </form>
+          <div class="form-done" hidden tabindex="-1">
+            <span class="done-mark" aria-hidden="true"><svg class="monogram" viewBox="0 0 76.69 100"><use href="assets/brand/sprite.svg#monogram"/></svg></span>
+            <h2>Thank you. We've received your request.</h2>
+            <p>Murphy or Leon will reply personally to arrange your walkthrough.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Questions -->
+    <section class="section paper" id="faq" aria-labelledby="faq-title">
+      <div class="wrap faq-wrap">
+        <div class="head reveal">
+          <p class="label">Questions</p>
+          <h2 class="h2" id="faq-title">Good to know</h2>
+        </div>
+        <div class="faq reveal d1">
+          <details>
+            <summary>Does Arcadia give legal advice?</summary>
+            <p>No. Arcadia is not a law firm. It organizes, checks, drafts and tracks for your firm, and brings every judgment call to your attorneys with the facts and their sources. Your attorneys make every legal decision.</p>
+          </details>
+          <details>
+            <summary>Which cases can Arcadia handle?</summary>
+            <p>Arcadia is built around USCIS's forms and the case work immigration firms do every day, and it keeps growing with them. In your demo we'll focus on the cases your firm handles most.</p>
+          </details>
+          <details>
+            <summary>How is our clients' information handled?</summary>
+            <p>Client information is used only to serve your firm's cases, under a written agreement with your firm. It's never sold and never used for advertising. Please don't send client documents or case details through this website or by email before we've agreed how to share them.</p>
+          </details>
+          <details>
+            <summary>Do our clients have to learn new software?</summary>
+            <p>Hardly. Clients see a simple view in English, Spanish or Chinese, with one task at a time and a group chat with your team. They only use it when your firm invites them.</p>
+          </details>
+          <details>
+            <summary>How is Arcadia priced?</summary>
+            <p>Flat and predictable, and never a share of your legal fees. We'll talk through what fits your firm in your demo.</p>
+          </details>
+          <details>
+            <summary>How do we get started?</summary>
+            <p>Request a private demo. We'll walk you through Arcadia with your kind of cases and talk about how it fits your team.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer dark">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <svg class="lockup" viewBox="0 0 457.69 100" role="img" aria-label="arcadia, Immigration Technology"><use href="assets/brand/sprite.svg#lockup-horizontal"/></svg>
+          <p class="footer-statement">Arcadia informs.<br>Attorneys advise.</p>
+          <a class="btn btn-primary" href="demo.html">Book a demo <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </div>
+        <nav class="footer-cols" aria-label="Footer">
+          <div>
+            <h2 class="label">Product</h2>
+            <a href="product.html">Overview</a>
+            <a href="index.html#how">How it works</a>
+            <a href="product.html#features">Features</a>
+            <a href="product.html#clients">Client view</a>
+          </div>
+          <div>
+            <h2 class="label">Company</h2>
+            <a href="company.html">About Arcadia</a>
+            <a href="company.html#founders">Founders</a>
+            <a href="security.html">Security and trust</a>
+            <a href="demo.html#faq">Questions</a>
+          </div>
+          <div>
+            <h2 class="label">Contact</h2>
+            <a href="demo.html">Book a demo</a>
+            <a href="mailto:murphy@arcadiaimmtech.com">murphy@arcadiaimmtech.com</a>
+            <a href="mailto:leon.li@arcadiaimmtech.com">leon.li@arcadiaimmtech.com</a>
+            <span>Los Angeles, California</span>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>Arcadia is not a law firm and does not provide legal advice. It works for licensed immigration attorneys, who make every legal decision.</p>
+        <p>&copy; 2026 Arcadia Immigration Technology, Inc. &middot; <a href="privacy.html">Privacy</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/site.js" defer></script>
+</body>
+</html>
