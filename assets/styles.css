@@ -723,7 +723,7 @@ footer.site-foot { background: var(--night); color: var(--ivory); padding: 80px 
 .legal { margin-top: 72px; padding-top: 26px; border-top: 1px solid rgba(246, 239, 227, 0.14); display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; font-size: 13.5px; color: rgba(246, 239, 227, 0.6); }
 .legal p { color: inherit; }
 .legal a { text-decoration: underline; text-underline-offset: 3px; }
-@media (max-width: 860px) { .foot { grid-template-columns: repeat(2, minmax(0, 1fr)); } .foot > div:first-child { grid-column: 1 / -1; } }
+@media (max-width: 860px) { .foot { grid-template-columns: repeat(2, minmax(0, 1fr)); } .foot > div:first-child, .foot > nav:last-child { grid-column: 1 / -1; } }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
