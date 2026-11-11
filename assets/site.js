@@ -1,6 +1,7 @@
-// The Arcadia website's only script. No tracking and no cookies. It sets the header over the hero and on scroll, opens
-// the phone menu, lets sections rise into view, steps through "How Arcadia works", moves the product pictures, switches
-// the sample client view's language, shows the phone's demo button, and sends the demo request form to Murphy and Leon.
+// The Arcadia website's only script. No tracking and no cookies. It sets the header over the home page's photograph,
+// opens the phone menu, lets sections rise into view, lights the statement word by word, runs "Prepare a case in four
+// clicks" (a fictional sample case, nothing sent anywhere), steps through "How Arcadia works", makes the workspace
+// tiles respond, and sends the demo request form to Murphy and Leon.
 
 // Where the form is sent: the Google Apps Script web app in Arcadia's Google Workspace, which emails both founders.
 // While it's empty, the form opens the visitor's own email app with the request filled in instead.
@@ -10,38 +11,85 @@ const INQUIRY_EMAILS = "murphy@arcadiaimmtech.com,leon.li@arcadiaimmtech.com";
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const page = document.body.dataset.page;
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
-// Links to the old one-page site's sections still land in the right place.
-const moved = { "#demo": "demo.html", "#team": "company.html#founders", "#faq": "demo.html#faq", "#inside": "#tour" };
+// Links to the old site's sections still land in the right place.
+const moved = { "#demo": "demo.html", "#team": "company.html#founders", "#faq": "demo.html#faq", "#inside": "product.html", "#tour": "#try" };
 if (page === "index" && moved[location.hash]) location.replace(moved[location.hash]);
 
-// The header: clear over a dark hero, then a frosted ivory bar once the hero has scrolled away.
-const header = document.querySelector(".site-header");
-const hero = document.querySelector(".hero");
-let solidAt = 8;
-const measure = () => {
-  solidAt = hero && document.body.dataset.hero === "dark" ? hero.offsetHeight - header.offsetHeight : 8;
-};
-const onScroll = () => header.classList.toggle("solid", window.scrollY > solidAt);
-measure();
-onScroll();
-window.addEventListener("scroll", onScroll, { passive: true });
-window.addEventListener("resize", () => {
-  measure();
-  onScroll();
-});
+// A number moving smoothly to its new value.
+function tween(from, to, ms, draw, done) {
+  if (reduceMotion || ms <= 0) {
+    draw(to);
+    if (done) done();
+    return;
+  }
+  const t0 = performance.now();
+  const step = (t) => {
+    const k = Math.min(1, (t - t0) / ms);
+    draw(from + (to - from) * (1 - Math.pow(1 - k, 3)));
+    if (k < 1) requestAnimationFrame(step);
+    else if (done) done();
+  };
+  requestAnimationFrame(step);
+}
 
-// The phone menu: the menu button opens the links as a sheet; a link, Escape or a wider screen closes it.
-const menuButton = document.querySelector(".menu-button");
-const nav = document.getElementById("site-nav");
-if (menuButton && nav) {
+// ---------------- header, phone menu, scrolling effects ----------------
+const header = $(".site");
+const darkHero = document.body.dataset.hero === "dark" ? $(".hero") : null;
+const heroMedia = $(".hero-media");
+const drifters = $$("[data-drift]");
+const words = $(".words");
+let wordSpans = [];
+if (words) {
+  words.innerHTML = words.textContent
+    .trim()
+    .split(/\s+/)
+    .map((w) => `<span>${w.replace(/&/g, "&amp;").replace(/</g, "&lt;")}</span>`)
+    .join(" ");
+  wordSpans = $$("span", words);
+}
+
+let queued = false;
+function onFrame() {
+  queued = false;
+  const y = window.scrollY;
+  const vh = window.innerHeight;
+  header.classList.toggle("solid", !darkHero || y > darkHero.offsetHeight - header.offsetHeight - 10);
+  if (!reduceMotion) {
+    if (heroMedia && y < darkHero.offsetHeight) heroMedia.style.transform = `translate3d(0, ${(y * 0.3).toFixed(1)}px, 0)`;
+    for (const el of drifters) {
+      const box = el.parentElement.getBoundingClientRect();
+      if (box.top < vh && box.bottom > 0) el.style.transform = `translate3d(0, ${((box.top - vh / 2) * -0.12).toFixed(1)}px, 0)`;
+    }
+  }
+  if (words) {
+    const r = words.getBoundingClientRect();
+    const p = Math.max(0, Math.min(1, (vh * 0.82 - r.top) / (r.height + vh * 0.3)));
+    const lit = reduceMotion ? wordSpans.length : Math.round(p * wordSpans.length);
+    wordSpans.forEach((s, i) => s.classList.toggle("lit", i < lit));
+  }
+}
+const queue = () => {
+  if (!queued) {
+    queued = true;
+    requestAnimationFrame(onFrame);
+  }
+};
+window.addEventListener("scroll", queue, { passive: true });
+window.addEventListener("resize", queue);
+onFrame();
+
+const menuButton = $(".menu");
+if (menuButton) {
   const setMenu = (open) => {
     header.classList.toggle("open", open);
     document.body.classList.toggle("menu-open", open);
     menuButton.setAttribute("aria-expanded", String(open));
   };
   menuButton.addEventListener("click", () => setMenu(!header.classList.contains("open")));
-  nav.addEventListener("click", (event) => {
+  $("#site-nav").addEventListener("click", (event) => {
     if (event.target.closest("a")) setMenu(false);
   });
   document.addEventListener("keydown", (event) => {
@@ -54,8 +102,8 @@ if (menuButton && nav) {
   });
 }
 
-// Sections rise into place as they come into view (skipped when the visitor prefers less motion).
-const reveals = document.querySelectorAll(".reveal");
+// Sections rise into place as they come into view.
+const risers = $$(".rv");
 if ("IntersectionObserver" in window && !reduceMotion) {
   const seen = new IntersectionObserver(
     (entries) => {
@@ -67,182 +115,398 @@ if ("IntersectionObserver" in window && !reduceMotion) {
     },
     { rootMargin: "0px 0px -8% 0px", threshold: 0.08 },
   );
-  reveals.forEach((el) => seen.observe(el));
+  risers.forEach((el) => seen.observe(el));
 } else {
-  reveals.forEach((el) => el.classList.add("in"));
+  risers.forEach((el) => el.classList.add("in"));
 }
 
-// The sample case in the hero counts up to its progress.
-document.querySelectorAll("[data-count]").forEach((num) => {
-  if (reduceMotion) return;
-  const target = Number(num.dataset.count);
-  const meter = num.closest(".ui-card")?.querySelector("[data-meter]");
-  const start = performance.now() + 700;
-  const length = 1800;
-  if (meter) {
-    meter.style.setProperty("--p", "0%");
-    meter.classList.add("is-counting");
-    setTimeout(() => meter.style.setProperty("--p", `${target}%`), 700);
+// The sample case resting on the home page's photograph counts up to 100.
+const glass = $(".glass");
+if (glass) {
+  const gp = $("#gp", glass);
+  const gm = $("#gm", glass);
+  const gs = $("#gs", glass);
+  if (!reduceMotion) {
+    gp.textContent = "0";
+    gm.style.width = "0%";
+    gs.textContent = "Reading 11 documents";
   }
-  num.textContent = "0";
-  const tick = (now) => {
-    const t = Math.min(Math.max((now - start) / length, 0), 1);
-    num.textContent = String(Math.round(target * (1 - Math.pow(1 - t, 3))));
-    if (t < 1) requestAnimationFrame(tick);
-  };
-  requestAnimationFrame(tick);
-});
-
-// "How Arcadia works": the step in the middle of the screen chooses the picture held beside it.
-const steps = [...document.querySelectorAll(".step")];
-const scenes = [...document.querySelectorAll(".scene")];
-if (steps.length && "IntersectionObserver" in window) {
-  const show = (i) => {
-    steps.forEach((s) => s.classList.toggle("is-active", s.dataset.step === String(i)));
-    scenes.forEach((s) => s.classList.toggle("is-active", s.dataset.scene === String(i)));
-  };
-  show(0);
-  const middle = new IntersectionObserver(
-    (entries) => {
-      for (const entry of entries) if (entry.isIntersecting) show(entry.target.dataset.step);
-    },
-    { rootMargin: "-45% 0px -45% 0px" },
-  );
-  steps.forEach((s) => middle.observe(s));
+  setTimeout(() => {
+    tween(0, 100, 3600, (v) => {
+      gp.textContent = Math.round(v);
+      gm.style.width = `${v}%`;
+      gs.textContent =
+        v < 45 ? "Reading 11 documents" : v < 82 ? "Drafting the I-130 and I-485" : v < 100 ? "Building the filing package" : "Ready for your signature";
+    });
+  }, 1100);
 }
 
-// "A look inside": the arrows move the pictures one at a time; swiping and the keyboard work too.
-const rail = document.querySelector(".rail");
-if (rail) {
-  const prev = document.querySelector('[data-rail="prev"]');
-  const next = document.querySelector('[data-rail="next"]');
-  const stepSize = () => {
-    const slide = rail.querySelector(".slide");
-    return slide ? slide.getBoundingClientRect().width + parseFloat(getComputedStyle(rail).columnGap || 0) : rail.clientWidth;
+// ---------------- "Prepare a case in four clicks" ----------------
+// A fictional sample case. The time given back uses Arcadia's own estimate per task (a trained paralegal's minutes,
+// less the seconds a person spends reviewing Arcadia's work), the same estimates as the product's Performance page.
+const demo = $("#taste");
+if (demo) {
+  const EST = { doc: 8 - 20 / 60, find: 6 - 30 / 60, answer: 1 - 5 / 60, form: 20 - 120 / 60 };
+  const pctEl = $("#pct");
+  const meter = $("#meter");
+  const statusEl = $("#status");
+  const hrs = $("#hrs");
+  const T = { docs: $("#tDocs"), find: $("#tFind"), ans: $("#tAns"), forms: $("#tForms"), pkg: $("#tPkg") };
+  let S = { pct: 0, min: 0, docs: 0 };
+  let timers = [];
+  const later = (fn, ms) => timers.push(setTimeout(fn, reduceMotion ? Math.min(ms, 60) : ms));
+  const status = (t) => (statusEl.textContent = t);
+  const setPct = (v) => {
+    const from = S.pct;
+    S.pct = v;
+    meter.style.width = `${v}%`;
+    tween(from, v, 1200, (x) => (pctEl.textContent = Math.round(x)));
   };
-  const update = () => {
-    prev.disabled = rail.scrollLeft <= 4;
-    next.disabled = rail.scrollLeft >= rail.scrollWidth - rail.clientWidth - 4;
+  const addMinutes = (m, ms = 600) => {
+    const from = S.min;
+    S.min += m;
+    tween(from, S.min, ms, (x) => (hrs.textContent = (x / 60).toFixed(1)));
   };
-  prev.addEventListener("click", () => rail.scrollBy({ left: -stepSize(), behavior: reduceMotion ? "auto" : "smooth" }));
-  next.addEventListener("click", () => rail.scrollBy({ left: stepSize(), behavior: reduceMotion ? "auto" : "smooth" }));
-  rail.addEventListener("scroll", update, { passive: true });
-  window.addEventListener("resize", update);
-  update();
-}
+  const count = (el, to, ms = 400) => {
+    const from = Number(el.textContent) || 0;
+    tween(from, to, ms, (x) => (el.textContent = Math.round(x)));
+  };
+  const show = (name) => {
+    $$(".pane", demo).forEach((p) => p.classList.toggle("on", p.dataset.pane === name));
+    const top = demo.getBoundingClientRect().top;
+    if (window.innerWidth < 760 && top < 0) {
+      window.scrollTo({ top: top + window.scrollY - header.offsetHeight - 10, behavior: reduceMotion ? "auto" : "smooth" });
+    }
+  };
+  const stepTo = (n) =>
+    $$("#steps li").forEach((li, i) => {
+      li.classList.toggle("on", i === n);
+      li.classList.toggle("done", i < n);
+    });
+  const srcSwitch = (which) => {
+    $$(".src[data-src]", demo).forEach((b) => {
+      b.classList.toggle("on", b.dataset.src === which);
+      b.setAttribute("aria-pressed", String(b.dataset.src === which));
+    });
+    $("#sheetDiv").hidden = which !== "div";
+    $("#sheetMar").hidden = which !== "mar";
+    $("#docName").textContent = which === "div" ? "Divorce judgment" : "Marriage certificate";
+    $("#docPage").textContent = which === "div" ? "page 2 of 2" : "page 1 of 1";
+  };
+  const type = (el, text, ms) => {
+    if (reduceMotion) {
+      el.textContent = text;
+      return;
+    }
+    let i = 0;
+    const per = Math.max(14, ms / text.length);
+    const tick = () => {
+      i += 1;
+      el.textContent = text.slice(0, i);
+      if (i < text.length) timers.push(setTimeout(tick, per));
+    };
+    tick();
+  };
 
-// The sample client view: English, Chinese and Spanish. It turns through them on its own until someone picks one.
-const words = {
-  en: {
-    title: "Your case",
-    progress: "Progress",
-    msg: "We received your marriage certificate.",
-    next: "Next step: please upload proof of a shared address.",
-    upload: "Upload documents",
-  },
-  zh: {
-    title: "您的案件",
-    progress: "进度",
-    msg: "我们已收到您的结婚证书。",
-    next: "下一步：请上传共同住址证明。",
-    upload: "上传文件",
-  },
-  es: {
-    title: "Su caso",
-    progress: "Progreso",
-    msg: "Recibimos su acta de matrimonio.",
-    next: "Siguiente paso: suba un comprobante de domicilio compartido.",
-    upload: "Subir documentos",
-  },
-};
-document.querySelectorAll("[data-lang-demo]").forEach((phone) => {
-  const screen = phone.querySelector(".phone-screen");
-  const buttons = [...phone.querySelectorAll("[data-lang]")];
-  const order = ["en", "zh", "es"];
-  let current = "en";
-  let timer = null;
-  const setLang = (lang) => {
-    if (lang === current) return;
-    current = lang;
-    buttons.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
-    screen.classList.add("is-switching");
-    setTimeout(
-      () => {
-        screen.lang = lang;
-        screen.querySelectorAll("[data-i18n]").forEach((el) => {
-          el.textContent = words[lang][el.dataset.i18n];
-        });
-        screen.classList.remove("is-switching");
-      },
-      reduceMotion ? 0 : 220,
+  const reset = () => {
+    timers.forEach(clearTimeout);
+    timers = [];
+    S = { pct: 0, min: 0, docs: 0 };
+    meter.style.width = "0%";
+    pctEl.textContent = "0";
+    hrs.textContent = "0.0";
+    Object.values(T).forEach((el) => (el.textContent = "0"));
+    $("#drop").classList.remove("go");
+    $$(".rr", demo).forEach((r) => r.classList.remove("in", "done"));
+    $("#rsum").classList.remove("in");
+    $("#need").classList.remove("resolved", "asking");
+    $("#reply").classList.add("hide");
+    $('[data-act="send"]', demo).hidden = false;
+    srcSwitch("div");
+    $$(".fr", demo).forEach((r) => {
+      r.classList.remove("f");
+      $(".v", r).textContent = "";
+    });
+    $("#c130").textContent = "0";
+    $("#c485").textContent = "0";
+    $("#ready").classList.remove("in");
+    const fill = $("#fillBtn");
+    fill.classList.remove("quiet");
+    fill.disabled = false;
+    fill.textContent = "Fill USCIS forms";
+    $$(".sh", demo).forEach((s) => s.classList.remove("in"));
+    $$("#plist li").forEach((l) => l.classList.remove("in"));
+    $("#pbadges").classList.remove("in");
+    $("#pkgGo").classList.remove("gone");
+    $("#pkgwrap").classList.remove("built");
+    $("#doneO").classList.remove("on");
+    show("drop");
+    stepTo(0);
+    status("Waiting for the client's documents");
+  };
+
+  const drop = () => {
+    $("#drop").classList.add("go");
+    status("Reading 8 documents");
+    later(() => {
+      show("read");
+      const rows = $$(".rr", demo);
+      rows.forEach((r, i) => {
+        later(() => r.classList.add("in"), 80 + i * 150);
+        later(() => {
+          r.classList.add("done");
+          S.docs += 1;
+          count(T.docs, S.docs, 200);
+          addMinutes(EST.doc, 300);
+          setPct(Math.round((68 * (i + 1)) / rows.length));
+        }, 80 + i * 150 + 420);
+      });
+      const end = 80 + rows.length * 150 + 560;
+      later(() => {
+        $("#rsum").classList.add("in");
+        count(T.find, 1);
+        addMinutes(EST.find);
+        status("1 needs you");
+      }, end);
+      later(() => {
+        show("review");
+        stepTo(1);
+      }, end + 1500);
+    }, 520);
+  };
+  const resolve = (text) => {
+    const need = $("#need");
+    need.classList.remove("asking");
+    need.classList.add("resolved");
+    $("#recText").textContent = text;
+    setPct(86);
+    status("Nothing open. Forms next");
+    later(() => {
+      show("forms");
+      stepTo(2);
+      status("Ready to fill the forms");
+    }, 1500);
+  };
+  const send = () => {
+    $('[data-act="send"]', demo).hidden = true;
+    status("Sent to Mariana");
+    later(() => {
+      $("#reply").classList.remove("hide");
+      S.docs += 1;
+      count(T.docs, S.docs);
+      addMinutes(EST.doc);
+      status("Mariana replied · file checked");
+    }, 1000);
+    later(() => resolve("Settled by the final decree (p.3) · confirmed by you · just now"), 2300);
+  };
+  const fill = () => {
+    const b = $("#fillBtn");
+    b.classList.add("quiet");
+    b.disabled = true;
+    b.textContent = "Forms filled";
+    status("Drafting the I-130 and I-485");
+    const a = $$("#f130 .fr");
+    const c = $$("#f485 .fr");
+    const order = a.flatMap((r, i) => [r, c[i]]).filter(Boolean);
+    order.forEach((r, i) =>
+      later(() => {
+        type($(".v", r), $(".v", r).dataset.v, 260);
+        r.classList.add("f");
+      }, 120 + i * 140),
     );
+    count($("#c130"), 160, 1700);
+    count($("#c485"), 159, 1700);
+    count(T.ans, 319, 1700);
+    addMinutes(319 * EST.answer, 1700);
+    setPct(100);
+    later(() => {
+      count(T.forms, 2);
+      addMinutes(2 * EST.form);
+      $("#ready").classList.add("in");
+      status("Ready for your review and signature");
+    }, 1900);
+    later(() => {
+      show("package");
+      stepTo(3);
+      status("Package next");
+    }, 4000);
   };
-  const stop = () => {
-    clearInterval(timer);
-    timer = null;
+  const build = () => {
+    $("#pkgGo").classList.add("gone");
+    $("#pkgwrap").classList.add("built");
+    status("Assembling in USCIS's order");
+    const sheets = $$(".sh", demo);
+    const items = $$("#plist li");
+    sheets.forEach((s, i) =>
+      later(() => {
+        s.classList.add("in");
+        items[i].classList.add("in");
+        count(T.pkg, i + 1, 150);
+      }, 150 + i * 230),
+    );
+    later(() => {
+      $("#pbadges").classList.add("in");
+      status("Package ready to sign");
+    }, 150 + sheets.length * 230 + 200);
+    later(() => {
+      $("#doneH").textContent = (S.min / 60).toFixed(1);
+      $("#doneO").classList.add("on");
+      $$("#steps li").forEach((l) => {
+        l.classList.remove("on");
+        l.classList.add("done");
+      });
+      $("#doneO .btn").focus({ preventScroll: true });
+    }, 150 + sheets.length * 230 + 1500);
   };
-  buttons.forEach((b) =>
-    b.addEventListener("click", () => {
-      stop();
-      phone.dataset.chosen = "yes";
-      setLang(b.dataset.lang);
-    }),
-  );
-  if (reduceMotion || !("IntersectionObserver" in window)) return;
-  new IntersectionObserver((entries) => {
-    for (const entry of entries) {
-      if (entry.isIntersecting && !timer && !phone.dataset.chosen) {
-        timer = setInterval(() => setLang(order[(order.indexOf(current) + 1) % order.length]), 3200);
-      } else if (!entry.isIntersecting) {
-        stop();
-      }
-    }
-  }).observe(phone);
-});
 
-// Full-width photographs drift a little slower than the page.
-const drifting = [...document.querySelectorAll("[data-parallax]")];
-if (drifting.length && !reduceMotion) {
-  let queued = false;
-  const drift = () => {
-    queued = false;
-    const vh = window.innerHeight;
-    for (const img of drifting) {
-      const box = img.parentElement.getBoundingClientRect();
-      if (box.bottom < 0 || box.top > vh) continue;
-      const extra = img.offsetHeight - box.height;
-      const progress = Math.min(Math.max((vh - box.top) / (vh + box.height), 0), 1);
-      img.style.transform = `translate3d(0, ${(-extra * progress).toFixed(1)}px, 0)`;
-    }
-  };
-  const queue = () => {
-    if (!queued) {
-      queued = true;
-      requestAnimationFrame(drift);
-    }
-  };
-  window.addEventListener("scroll", queue, { passive: true });
-  window.addEventListener("resize", queue);
-  drift();
-}
-
-// On phones, the demo button at the bottom of the screen: shown once the opening has scrolled away, hidden again
-// while a closing invitation, the form or the footer is in view.
-const mobileCta = document.querySelector(".mobile-cta");
-const ctaHiders = [".hero", ".intro", "[data-cta]", ".site-footer"].flatMap((s) => [...document.querySelectorAll(s)]);
-if (mobileCta && "IntersectionObserver" in window) {
-  const inView = new Set(ctaHiders);
-  const watch = new IntersectionObserver((entries) => {
-    for (const entry of entries) {
-      if (entry.isIntersecting) inView.add(entry.target);
-      else inView.delete(entry.target);
-    }
-    mobileCta.classList.toggle("show", inView.size === 0);
+  $("#try").addEventListener("click", (event) => {
+    const b = event.target.closest("[data-act],[data-src]");
+    if (!b) return;
+    if (b.dataset.src) return srcSwitch(b.dataset.src);
+    const act = b.dataset.act;
+    if (act === "drop") drop();
+    else if (act === "ok") resolve("Marked OK by you · attorney reviewed · just now");
+    else if (act === "ask") {
+      $("#need").classList.add("asking");
+      status("Message drafted in Spanish");
+    } else if (act === "send") send();
+    else if (act === "fill") fill();
+    else if (act === "build") build();
+    else if (act === "again") reset();
   });
-  ctaHiders.forEach((el) => watch.observe(el));
+  reset();
 }
 
-// The demo request form.
+// ---------------- "How Arcadia works": the step in the middle of the screen picks the picture ----------------
+const storySteps = $$(".hs");
+const storyPics = $$(".hv .vis");
+if (storySteps.length && storyPics.length) {
+  // On phones each step shows its own picture underneath.
+  storySteps.forEach((s, i) => {
+    const copy = storyPics[i].cloneNode(true);
+    copy.classList.add("inline", "on");
+    s.appendChild(copy);
+  });
+  const showStep = (i) => {
+    storySteps.forEach((s, k) => s.classList.toggle("on", k === i));
+    storyPics.forEach((v, k) => v.classList.toggle("on", k === i));
+  };
+  showStep(0);
+  if ("IntersectionObserver" in window) {
+    const middle = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) if (entry.isIntersecting) showStep(Number(entry.target.dataset.v));
+      },
+      { rootMargin: "-45% 0px -45% 0px" },
+    );
+    storySteps.forEach((s) => middle.observe(s));
+  }
+}
+
+// ---------------- the workspace tiles ----------------
+$$("#today .todo").forEach((t) =>
+  t.addEventListener("click", () => {
+    t.classList.toggle("x");
+    t.setAttribute("aria-pressed", String(t.classList.contains("x")));
+  }),
+);
+
+const caseTabs = $$("#ctabs button");
+const caseLists = $$(".clist");
+caseTabs.forEach((t) =>
+  t.addEventListener("click", () => {
+    caseTabs.forEach((x) => x.classList.toggle("on", x === t));
+    caseTabs.forEach((x) => x.setAttribute("aria-selected", String(x === t)));
+    caseLists.forEach((l, i) => l.classList.toggle("on", i === Number(t.dataset.l)));
+  }),
+);
+
+const ANSWERS = [
+  {
+    text: "Four things: the prior marriage dates to confirm, the spelling of Castillo, the renewed lease from the client, and your signature on the I-130 and I-485.",
+    sources: ["Divorce judgment · p.2", "Passport · p.1", "Chat · Nov 9"],
+  },
+  {
+    text: "Brooks & Ruiz Soto: evidence response due Dec 7. Whitfield & Reyes Castillo: medical exam Dec 1. Kowalski & Wang: interview Jan 14, notice read.",
+    sources: ["Evidence request · p.1", "Call notes · Nov 4", "Interview notice · p.1"],
+  },
+];
+const answerBox = $("#ans");
+$$("#askq .qb").forEach((b) =>
+  b.addEventListener("click", () => {
+    $$("#askq .qb").forEach((x) => x.classList.toggle("on", x === b));
+    const a = ANSWERS[Number(b.dataset.a)];
+    answerBox.innerHTML = `<span class="tx"></span><div class="srcs" style="opacity:0">${a.sources.map((s) => `<span class="src">${s}</span>`).join("")}</div>`;
+    const tx = $(".tx", answerBox);
+    const sr = $(".srcs", answerBox);
+    if (reduceMotion) {
+      tx.textContent = a.text;
+      sr.style.opacity = 1;
+      return;
+    }
+    let i = 0;
+    const tick = () => {
+      i += 2;
+      tx.textContent = a.text.slice(0, i);
+      if (i < a.text.length) setTimeout(tick, 12);
+      else sr.style.opacity = 1;
+    };
+    tick();
+  }),
+);
+
+const callButton = $("#call .cbtn");
+if (callButton) {
+  callButton.addEventListener("click", () => {
+    if (callButton.classList.contains("saved")) return;
+    $("#call .callout").classList.add("on");
+    callButton.textContent = "Saved to the case ✓";
+    callButton.classList.add("saved");
+  });
+}
+
+const MESSAGES = {
+  en: "We received your marriage certificate. Next, please send proof that you live together, like a lease or a joint bank statement.",
+  es: "Recibimos su certificado de matrimonio. Ahora, envíenos un comprobante de que viven juntos, como un contrato de arrendamiento o un estado de cuenta conjunto.",
+  zh: "我们已收到您的结婚证书。下一步：请上传共同住址证明，例如租约或联名银行账单。",
+};
+const langMsg = $("#langMsg");
+$$("#lang button").forEach((b) =>
+  b.addEventListener("click", () => {
+    $$("#lang button").forEach((x) => {
+      x.classList.toggle("on", x === b);
+      x.setAttribute("aria-pressed", String(x === b));
+    });
+    const lang = b.dataset.g;
+    langMsg.lang = lang === "zh" ? "zh-Hans" : lang;
+    langMsg.innerHTML = `${MESSAGES[lang]}<small>${lang === "en" ? "Draft" : "Draft translation"} · confirmed by your staff before sending</small>`;
+  }),
+);
+
+if ("IntersectionObserver" in window) {
+  const live = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        const el = entry.target;
+        if (el.id === "perf") {
+          $$("#bars i").forEach((b, i) => setTimeout(() => (b.style.height = `${b.dataset.h}%`), reduceMotion ? 0 : i * 50));
+          tween(0, 90, 1400, (v) => ($("#perfH").textContent = Math.round(v)));
+          live.unobserve(el);
+        } else {
+          el.classList.add("live");
+        }
+      }
+    },
+    { threshold: 0.3 },
+  );
+  if ($("#perf")) live.observe($("#perf"));
+  $$(".tile").forEach((t) => {
+    if ($(".sort", t)) live.observe(t);
+  });
+}
+
+// ---------------- the demo request form ----------------
 const form = document.getElementById("inquiry");
 if (form) {
   const done = form.parentElement.querySelector(".form-done");

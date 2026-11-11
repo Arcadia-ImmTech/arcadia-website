@@ -3,14 +3,15 @@
 <head>
   <meta charset="utf-8">
   <title>Arcadia · The AI case workspace for immigration law firms</title>
-  <meta name="description" content="Arcadia is the AI paralegal and case workspace for U.S. immigration law firms: verified, sourced filing packages, ready for attorney review in days, not weeks.">
+  <meta name="description" content="Arcadia is the AI case workspace for U.S. immigration law firms. It prepares every case, from the first document to a filing package ready for the attorney's signature.">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#2b2017">
+  <meta name="theme-color" content="#16100b">
   <meta name="format-detection" content="telephone=no">
   <link rel="icon" href="assets/favicon.png" type="image/png" sizes="64x64">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link rel="preload" href="assets/fonts/SpaceGrotesk-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/Manrope-Variable.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/img/photo/la-dusk-2400.jpg" as="image" imagesrcset="assets/img/photo/la-dusk-960.jpg 960w, assets/img/photo/la-dusk-1600.jpg 1600w, assets/img/photo/la-dusk-2400.jpg 2400w" imagesizes="100vw">
   <link rel="stylesheet" href="assets/styles.css">
   <script>document.documentElement.className = "js";</script>
   <meta property="og:title" content="Arcadia · The AI case workspace for immigration law firms">
@@ -22,166 +23,385 @@
 </head>
 <body data-hero="dark" data-page="index">
   <a class="skip" href="#main">Skip to content</a>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-file" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8zM14 3v5h5"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8zM14 3v5h5M9 13h6M9 17h4"/></symbol>
+  </svg>
 
-  <header class="site-header">
-    <div class="wrap header-bar">
-      <a class="brand" href="index.html" aria-label="arcadia, home">
-        <svg class="wordmark" viewBox="0 0 405.59 100" aria-hidden="true"><use href="assets/brand/sprite.svg#wordmark"/></svg>
-      </a>
-      <nav class="nav" id="site-nav" aria-label="Main">
+  <header class="site">
+    <div class="wrap bar">
+      <a class="brand" href="index.html" aria-label="Arcadia, home"><svg viewBox="0 0 405.59 100" aria-hidden="true"><use href="assets/brand/sprite.svg#wordmark"/></svg></a>
+      <a class="btn cta-m" href="demo.html">Request a demo</a>
+      <nav class="main" id="site-nav" aria-label="Main">
+        <a href="#try">Try it</a>
         <a href="product.html">Product</a>
         <a href="security.html">Security</a>
         <a href="company.html">Company</a>
-        <a class="btn btn-primary" href="demo.html">Book a demo</a>
+        <a class="btn" href="demo.html">Request a demo</a>
       </nav>
-      <button class="menu-button" type="button" aria-controls="site-nav" aria-expanded="false">
-        <span class="sr-only">Menu</span>
-        <span class="bars" aria-hidden="true"><i></i><i></i></span>
-      </button>
+      <button class="menu" type="button" aria-controls="site-nav" aria-expanded="false"><span class="sr-only">Menu</span><i></i><i></i></button>
     </div>
   </header>
 
   <main id="main">
-    <!-- Hero: Los Angeles at night, the headline, and a sample case resting on it. -->
-    <section class="hero on-photo" aria-labelledby="hero-title">
-      <div class="hero-media"><img src="assets/img/photo/la-night-1600.jpg" srcset="assets/img/photo/la-night-960.jpg 960w, assets/img/photo/la-night-1600.jpg 1600w, assets/img/photo/la-night-2400.jpg 2400w" sizes="100vw" alt="" fetchpriority="high" width="2400" height="1600" decoding="async"></div>
-      <div class="wrap hero-inner">
-        <div class="hero-grid">
-          <div>
-            <p class="label rise">For U.S. immigration law firms</p>
-            <h1 class="display rise d1" id="hero-title">Grow your caseload, <span class="nowrap">not your workload.</span></h1>
-            <p class="lede rise d2">Arcadia is the AI paralegal and case workspace for immigration firms. Verified, complete filing packages, ready for attorney review in days instead of weeks.</p>
-            <div class="actions rise d3">
-              <a class="btn btn-primary btn-lg" href="demo.html">Book a demo <span class="arrow" aria-hidden="true">&rarr;</span></a>
-              <a class="btn btn-secondary btn-lg" href="#how">See how it works</a>
+
+    <!-- The opening: a city at dusk, full screen. -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-media"><img src="assets/img/photo/la-dusk-2400.jpg" srcset="assets/img/photo/la-dusk-960.jpg 960w, assets/img/photo/la-dusk-1600.jpg 1600w, assets/img/photo/la-dusk-2400.jpg 2400w" sizes="100vw" alt="" width="2400" height="1440" fetchpriority="high"></div>
+      <div class="wrap hero-in">
+        <p class="label up">For U.S. immigration law firms</p>
+        <h1 class="up u2" id="hero-title">Grow your caseload,<br class="br-d"> not your workload.</h1>
+        <div class="hero-row">
+          <div class="up u3">
+            <p class="sub">Arcadia is the AI case workspace for immigration attorneys. It prepares every case, from the first document to a filing package ready for your signature.</p>
+            <div class="actions">
+              <a class="btn btn-light" href="demo.html">Request a private demo <span class="arr" aria-hidden="true">&rarr;</span></a>
+              <a class="btn btn-glass" href="#try">Try it now</a>
+            </div>
+          </div>
+          <div class="glass up u4" aria-hidden="true">
+            <div class="t"><span class="tag">Sample case</span><span class="gp" id="gp">100</span></div>
+            <b class="name">Whitfield &amp; Reyes Castillo</b>
+            <small>Marriage case · I-130 and I-485</small>
+            <div class="gm"><i id="gm" style="width:100%"></i></div>
+            <div class="gs"><span class="d"></span><span id="gs">Ready for your signature</span></div>
+          </div>
+        </div>
+      </div>
+      <span class="scrollcue" aria-hidden="true"></span>
+    </section>
+
+    <section class="statement" aria-label="What Arcadia does">
+      <div class="wrap">
+        <p class="words">Most firms can only grow by hiring. Arcadia gives every attorney a support team in software. It reads every page, drafts every form, and keeps every date in sight, so you take on more cases with the team you have.</p>
+      </div>
+    </section>
+
+    <!-- Try it: a working miniature with a fictional sample case. -->
+    <section class="try" id="try" aria-labelledby="try-title">
+      <div class="wrap">
+        <div class="try-head">
+          <div><p class="label rv">Try it</p><h2 class="rv d1" id="try-title">Prepare a case<br class="br-d"> in four clicks.</h2></div>
+          <p class="lede rv d2">This is Arcadia with a fictional sample case. Click the button with the glowing ring and watch the case get ready.</p>
+        </div>
+
+        <div class="app rv" id="taste" role="region" aria-label="A working miniature of Arcadia with a fictional sample case">
+          <div class="rail" aria-hidden="true">
+            <span class="mono"><svg viewBox="0 0 76.69 100"><use href="assets/brand/sprite.svg#monogram"/></svg></span>
+            <span class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg></span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 21l1.9-5.4A8 8 0 1 1 21 12z"/></svg></span>
+            <span><svg viewBox="0 0 24 24"><use href="#i-file"/></svg></span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg></span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 15a8 8 0 1 1 16 0"/><path d="M12 15l4-5"/></svg></span>
+          </div>
+
+          <div class="am">
+            <div class="ah">
+              <div><span class="chip-tag">Sample case</span><h3 class="sr-only">The sample case</h3><h4>Whitfield &amp; Reyes Castillo</h4><small>Marriage case · I-130 and I-485</small></div>
+              <div class="score"><b id="pct">0</b><small>Progress to 100</small></div>
+            </div>
+            <div class="meter"><i id="meter"></i></div>
+            <div class="status" aria-live="polite"><span class="d"></span><span id="status">Waiting for the client's documents</span></div>
+
+            <div class="stage">
+              <div class="pane on" data-pane="drop">
+                <div class="drop" id="drop">
+                  <div class="files" aria-hidden="true">
+                    <span class="file" style="--r:-3deg;--i:0"><svg><use href="#i-file"/></svg>IMG_4471.HEIC</span>
+                    <span class="file" style="--r:2deg;--i:1"><svg><use href="#i-file"/></svg>scan0032.pdf</span>
+                    <span class="file" style="--r:-1deg;--i:2"><svg><use href="#i-file"/></svg>WhatsApp Image 2026-10-02.jpeg</span>
+                    <span class="file" style="--r:3deg;--i:3"><svg><use href="#i-file"/></svg>IMG_4480.HEIC</span>
+                    <span class="file" style="--r:-2deg;--i:4"><svg><use href="#i-file"/></svg>Document (3).pdf</span>
+                    <span class="file" style="--r:1deg;--i:5"><svg><use href="#i-file"/></svg>photo_2026.jpg</span>
+                    <span class="file" style="--r:-3deg;--i:6"><svg><use href="#i-file"/></svg>scan0033.pdf</span>
+                    <span class="file" style="--r:2deg;--i:7"><svg><use href="#i-file"/></svg>IMG_4502.HEIC</span>
+                  </div>
+                  <p>Mariana sent 8 files from her phone: photos, scans and a WhatsApp image, named the way phones name them.</p>
+                  <button class="hot" type="button" data-act="drop">Drop them into the case</button>
+                </div>
+              </div>
+
+              <div class="pane" data-pane="read">
+                <div class="reads">
+                  <div class="rr"><span class="ic"><svg><use href="#i-doc"/></svg></span><div><b>Passport · Mariana Reyes Castillo</b><small>was IMG_4471.HEIC · 2 pages</small></div><span class="st"></span></div>
+                  <div class="rr"><span class="ic"><svg><use href="#i-doc"/></svg></span><div><b>Birth certificate</b><small>was scan0032.pdf · 1 page</small></div><span class="st"></span></div>
+                  <div class="rr"><span class="ic"><svg><use href="#i-doc"/></svg></span><div><b>Marriage certificate</b><small>was WhatsApp Image 2026-10-02.jpeg</small></div><span class="st"></span></div>
+                  <div class="rr"><span class="ic"><svg><use href="#i-doc"/></svg></span><div><b>Form I-94 · arrival record</b><small>was IMG_4480.HEIC · 1 page</small></div><span class="st"></span></div>
+                  <div class="rr"><span class="ic"><svg><use href="#i-doc"/></svg></span><div><b>Divorce judgment</b><small>was Document (3).pdf · 2 pages</small></div><span class="st"></span></div>
+                  <div class="rr"><span class="ic"><svg><use href="#i-doc"/></svg></span><div><b>Joint lease</b><small>was photo_2026.jpg · 1 page</small></div><span class="st"></span></div>
+                  <div class="rr"><span class="ic"><svg><use href="#i-doc"/></svg></span><div><b>Joint bank statement</b><small>was scan0033.pdf · 3 pages</small></div><span class="st"></span></div>
+                  <div class="rr"><span class="ic"><svg><use href="#i-doc"/></svg></span><div><b>Passport photos</b><small>was IMG_4502.HEIC · 2 photos</small></div><span class="st"></span></div>
+                </div>
+                <div class="rsum" id="rsum"><span class="d"></span>Every name, date and address compared across 8 documents. One thing needs you.</div>
+              </div>
+
+              <div class="pane" data-pane="review">
+                <div class="review">
+                  <div class="doc">
+                    <div class="dh"><span id="docName">Divorce judgment</span><small id="docPage">page 2 of 2</small></div>
+                    <div class="sheet" id="sheetDiv" aria-hidden="true">
+                      <div class="ttl">JUDGMENT OF DISSOLUTION</div>
+                      <i style="width:70%"></i><i style="width:52%"></i><i style="width:64%"></i>
+                      <div class="hl"><span>Date entered</span><span>08/02/2025</span></div>
+                      <i style="width:76%"></i><i style="width:44%"></i><i style="width:68%"></i><i style="width:58%"></i><i style="width:36%"></i>
+                      <span class="wm">SAMPLE – NOT A REAL DOCUMENT</span>
+                    </div>
+                    <div class="sheet" id="sheetMar" aria-hidden="true" hidden>
+                      <div class="ttl">CERTIFICATE OF MARRIAGE</div>
+                      <i style="width:60%"></i><i style="width:74%"></i>
+                      <div class="hl"><span>Date of marriage</span><span>06/14/2025</span></div>
+                      <i style="width:48%"></i><i style="width:70%"></i><i style="width:62%"></i><i style="width:40%"></i><i style="width:66%"></i><i style="width:52%"></i>
+                      <span class="wm">SAMPLE – NOT A REAL DOCUMENT</span>
+                    </div>
+                  </div>
+                  <div class="need" id="need">
+                    <span class="label" style="font-size:10.5px">Needs you · 1</span>
+                    <div class="nt"><span class="d"></span><b>Prior marriage ends after the marriage date</b></div>
+                    <p>The divorce judgment (p.2) shows the prior marriage ending on Aug 2, 2025, after the marriage date of Jun 14, 2025 on the marriage certificate (p.1).</p>
+                    <div class="srcs">
+                      <button class="src on" type="button" data-src="div" aria-pressed="true"><svg><use href="#i-file"/></svg>Divorce judgment · p.2</button>
+                      <button class="src" type="button" data-src="mar" aria-pressed="false"><svg><use href="#i-file"/></svg>Marriage certificate · p.1</button>
+                    </div>
+                    <div class="acts">
+                      <button class="hot" type="button" data-act="ok">Mark OK</button>
+                      <button class="sec-btn" type="button" data-act="ask">Ask the client</button>
+                    </div>
+                    <div class="ask">
+                      <div class="to"><span>To Mariana · in Spanish</span><span class="chip-tag">Draft translation</span></div>
+                      <div class="bub" lang="es">Hola Mariana: ¿nos puede enviar la sentencia de divorcio final, con la fecha en que se registró? Gracias.<small lang="en">Hi Mariana: could you send the final divorce decree, with the date it was entered? Thank you.</small></div>
+                      <div class="bub them hide" id="reply"><span lang="es">Aquí está la sentencia final.</span><small>Here is the final decree.</small><div class="att"><span class="ok"></span>Final divorce decree · 3 pages · legible, complete, the right document</div></div>
+                      <button class="hot" type="button" data-act="send" style="align-self:flex-start">Confirm and send</button>
+                    </div>
+                    <div class="rec"><span class="ok"></span><span id="recText">Marked OK by you · attorney reviewed · just now</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pane" data-pane="forms">
+                <div class="fhead">
+                  <p>On USCIS's own PDF forms, current edition. Signature boxes stay empty for ink.</p>
+                  <button class="hot" type="button" data-act="fill" id="fillBtn">Fill USCIS forms</button>
+                </div>
+                <div class="forms">
+                  <div class="form" id="f130">
+                    <div class="fh"><b>Form I-130</b><span><span id="c130">0</span> answers</span></div>
+                    <div class="fr"><small>Beneficiary · family name</small><span class="v" data-v="REYES CASTILLO"></span><span class="src">Passport · p.1</span></div>
+                    <div class="fr"><small>Beneficiary · given name</small><span class="v" data-v="MARIANA ISABEL"></span><span class="src">Passport · p.1</span></div>
+                    <div class="fr"><small>Date of marriage</small><span class="v" data-v="06/14/2025"></span><span class="src">Marriage cert. · p.1</span></div>
+                    <div class="fr"><small>Petitioner · family name</small><span class="v" data-v="WHITFIELD"></span><span class="src">U.S. passport · p.1</span></div>
+                  </div>
+                  <div class="form" id="f485">
+                    <div class="fh"><b>Form I-485</b><span><span id="c485">0</span> answers</span></div>
+                    <div class="fr"><small>Family name</small><span class="v" data-v="REYES CASTILLO"></span><span class="src">Passport · p.1</span></div>
+                    <div class="fr"><small>Date of birth</small><span class="v" data-v="04/18/1995"></span><span class="src">Birth cert. · p.1</span></div>
+                    <div class="fr"><small>Date of last arrival</small><span class="v" data-v="09/04/2023"></span><span class="src">Form I-94 · p.1</span></div>
+                    <div class="fr"><small>Status at last arrival</small><span class="v" data-v="B-2 VISITOR"></span><span class="src">Form I-94 · p.1</span></div>
+                  </div>
+                </div>
+                <div class="ready" id="ready"><span class="ok"></span>Ready for your review and signature<small>319 answers, each one click from its page</small></div>
+              </div>
+
+              <div class="pane" data-pane="package">
+                <div class="pkgwrap" id="pkgwrap">
+                  <div class="pkg">
+                    <div class="stack" aria-hidden="true">
+                      <div class="sh" style="--k:0"><b>Cover letter</b><i style="width:80%"></i><i style="width:64%"></i><i style="width:72%"></i><span class="tb">1</span></div>
+                      <div class="sh" style="--k:1"><b>Form G-28</b><i style="width:70%"></i><i style="width:54%"></i><span class="tb">2</span></div>
+                      <div class="sh" style="--k:2"><b>Filing fees</b><i style="width:60%"></i><i style="width:40%"></i><span class="tb">3</span></div>
+                      <div class="sh" style="--k:3"><b>Form I-130</b><i style="width:76%"></i><i style="width:58%"></i><span class="tb">4</span></div>
+                      <div class="sh" style="--k:4"><b>Form I-485</b><i style="width:72%"></i><i style="width:66%"></i><span class="tb">5</span></div>
+                      <div class="sh" style="--k:5"><b>Evidence · tabs A to H</b><i style="width:68%"></i><i style="width:50%"></i><span class="tb">6</span></div>
+                    </div>
+                    <div>
+                      <ul class="plist" id="plist">
+                        <li><span class="n">01</span><span>Cover letter</span><small>drafted</small></li>
+                        <li><span class="n">02</span><span>Form G-28</span><small>from the firm</small></li>
+                        <li><span class="n">03</span><span>Filing fees</span><small>counted</small></li>
+                        <li><span class="n">04</span><span>Form I-130</span><small>160 answers</small></li>
+                        <li><span class="n">05</span><span>Form I-485</span><small>159 answers</small></li>
+                        <li><span class="n">06</span><span>Evidence, tabbed A to H</span><small>8 documents</small></li>
+                      </ul>
+                      <div class="pbadges" id="pbadges">
+                        <span class="pb"><span class="ok"></span>6 places to sign, marked</span>
+                        <span class="pb"><span class="ok"></span>In USCIS's order</span>
+                        <span class="pb"><span class="ok"></span>Tracked until the receipt</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pkg-go" id="pkgGo"><button class="hot" type="button" data-act="build">Build the filing package</button></div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="ui-card case-card rise d4" role="img" aria-label="A fictional sample case in Arcadia: Lin and Ortega, a marriage case, 86 of 100 on its way to ready, with 3 items for the attorney.">
-            <div class="ui-top">
-              <span class="chip chip-review">Awaiting attorney review</span>
-              <span class="ui-tag">Sample case</span>
+          <aside class="side" aria-label="Paralegal time given back">
+            <div class="sh2"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"/></svg>Arcadia</div>
+            <div class="tg">
+              <small>Paralegal time given back</small>
+              <div class="big"><b id="hrs">0.0</b><span>hours</span></div>
             </div>
-            <p class="case-name">Lin and Ortega</p>
-            <p class="case-sub">Marriage case &middot; I-130 and I-485</p>
-            <div class="progress">
-              <div class="progress-head"><span class="ui-tag">Progress to 100</span><span class="progress-num" data-count="86">86</span></div>
-              <div class="meter" data-meter style="--p: 86%"><i></i></div>
-            </div>
-            <ul class="ui-list">
-              <li><span class="dot dot-review"></span>3 items need attorney review</li>
-              <li><span class="dot dot-ai"></span>12 answers drafted, waiting for paralegal confirmation</li>
-              <li><span class="dot dot-client"></span>1 document waiting on the client</li>
+            <ul class="tasks">
+              <li>Documents read, named, filed <b id="tDocs">0</b></li>
+              <li>Problems found, with the page <b id="tFind">0</b></li>
+              <li>Form answers drafted, sourced <b id="tAns">0</b></li>
+              <li>USCIS forms filled <b id="tForms">0</b></li>
+              <li>Package pieces assembled <b id="tPkg">0</b></li>
             </ul>
-            <div class="ui-actions"><span class="ui-btn solid">Open case</span><span class="ui-btn">Message client</span></div>
+            <p class="note">Arcadia's estimate of a trained paralegal's time for each task, less the time you spend reviewing it.</p>
+          </aside>
+
+          <div class="done-o" id="doneO">
+            <div class="done-c">
+              <div class="big-ok" aria-hidden="true"></div>
+              <h3>Ready for your signature.</h3>
+              <p>Four clicks from you. About <b id="doneH">6.6</b> hours of paralegal work from Arcadia.</p>
+              <p class="fine">Arcadia's estimate, task by task. Sample case, fictional people.</p>
+              <div class="row">
+                <a class="btn btn-dark" href="demo.html">See it on your cases <span class="arr" aria-hidden="true">&rarr;</span></a>
+                <button class="btn btn-line" type="button" data-act="again">Start over</button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <ul class="hero-facts rise d4" aria-label="What every firm gets">
-          <li><strong>Built on USCIS sources</strong>Current form editions and official guidance</li>
-          <li><strong>Three languages</strong>Clients served in English, Spanish and Chinese</li>
-          <li><strong>Law firms only</strong>Your clients stay your clients</li>
-          <li><strong>Confidential</strong>Client information is never sold</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- The problem -->
-    <section class="section" id="why" aria-labelledby="why-title">
-      <div class="wrap problem">
-        <div class="problem-head head reveal">
-          <p class="label">Sound familiar?</p>
-          <h2 class="h2" id="why-title">Immigration practice still runs on paper, inboxes and memory.</h2>
-          <p class="lede">Every firm we talk to describes the same week: great people, buried in work that never shows up on an invoice.</p>
-          <div class="problem-photo"><img src="assets/img/photo/late-window-1600.jpg" srcset="assets/img/photo/late-window-960.jpg 960w, assets/img/photo/late-window-1600.jpg 1600w, assets/img/photo/late-window-2400.jpg 2400w" sizes="(max-width: 900px) 100vw, 45vw" alt="" width="2400" height="1600" decoding="async" loading="lazy"></div>
-        </div>
-        <ol class="pains">
-          <li class="reveal"><span class="n">01</span><div><h3>Documents everywhere</h3><p>Clients send photos by text, WeChat, WhatsApp and email. Someone has to find them, name them and file them to the right case.</p></div></li>
-          <li class="reveal"><span class="n">02</span><div><h3>The same facts, typed again and again</h3><p>Names, dates and addresses re-entered by hand on form after form, for every client.</p></div></li>
-          <li class="reveal"><span class="n">03</span><div><h3>Small errors, big consequences</h3><p>A misspelled name or a date that doesn't match across documents, caught late, or not at all.</p></div></li>
-          <li class="reveal"><span class="n">04</span><div><h3>Deadlines in someone's head</h3><p>Appointments, response dates and expiring documents tracked on sticky notes, calendars and spreadsheets.</p></div></li>
-          <li class="reveal"><span class="n">05</span><div><h3>&ldquo;What's the status of my case?&rdquo;</h3><p>Calls and messages that pull your team away from the work, often in a language not everyone on staff speaks.</p></div></li>
-          <li class="reveal"><span class="n">06</span><div><h3>Know-how that lives with one person</h3><p>Cases stall when someone is out, and attorneys review unfinished files late at night.</p></div></li>
+        <ol class="steps" id="steps" aria-label="The four clicks">
+          <li class="on"><span class="n">1</span>Drop the documents</li>
+          <li><span class="n">2</span>Decide what needs you</li>
+          <li><span class="n">3</span>Fill USCIS forms</li>
+          <li><span class="n">4</span>Build the package</li>
         </ol>
+        <div class="again"><button type="button" data-act="again">Start over</button></div>
       </div>
     </section>
 
-    <!-- How it works: the three steps, with the picture held in view on wide screens. -->
-    <section class="section paper" id="how" aria-labelledby="how-title">
+    <!-- How Arcadia works: six steps, the picture beside them changing as you scroll. -->
+    <section class="how" id="how" aria-labelledby="how-title">
       <div class="wrap">
-        <div class="head reveal">
-          <p class="label">How Arcadia works</p>
-          <h2 class="h1" id="how-title">Arcadia informs.<br>Attorneys advise.</h2>
-          <p class="lede">Arcadia carries the work between the documents and the attorney's signature. It reports what it found, where it found it, and who decides next.</p>
+        <div class="how-head">
+          <p class="label rv">How Arcadia works</p>
+          <h2 class="rv d1" id="how-title">Everything between your strategy and your signature.</h2>
+          <p class="lede rv d2">You make the legal calls. Arcadia does the rest of the case: the collecting, reading, checking, drafting, assembling and watching that used to fill a paralegal's week.</p>
         </div>
 
-        <div class="story">
-          <div class="story-steps">
-            <article class="step" data-step="0">
-              <p class="step-n">01</p>
-              <h3 class="h2">AI reads.</h3>
-              <p>Documents become structured data, with the file and page behind every fact.</p>
-            </article>
-            <article class="step" data-step="1">
-              <p class="step-n">02</p>
-              <h3 class="h2">Code checks.</h3>
-              <p>Tested code compares names, dates and addresses across every document. The same facts always give the same result.</p>
-            </article>
-            <article class="step" data-step="2">
-              <p class="step-n">03</p>
-              <h3 class="h2">Attorneys decide.</h3>
-              <p>The decision stays with the licensed attorney. Every judgment call arrives with the facts, and where they came from, already in front of them.</p>
-            </article>
+        <div class="how-grid">
+          <div class="how-steps">
+            <div class="hs" data-v="0">
+              <span class="n">01</span>
+              <h3>Open a case from your own note.</h3>
+              <p>Write your strategy the way you would brief a paralegal. Arcadia turns it into the forms, the documents to collect, the client's to-dos and the dates, and drafts the first message to your client in their language.</p>
+              <span class="gain">No intake checklist to build by hand</span>
+            </div>
+            <div class="hs" data-v="1">
+              <span class="n">02</span>
+              <h3>Documents arrive named, checked and filed.</h3>
+              <p>Clients send photos from their phone. Arcadia checks that each one is legible, complete, current and the document you asked for, names it, and files it to the right case. A blurry page goes back to the client in seconds, in words your firm set in advance, not weeks later.</p>
+              <span class="gain">No chasing, renaming or re-uploading</span>
+            </div>
+            <div class="hs" data-v="2">
+              <span class="n">03</span>
+              <h3>Every page read. Every fact cross-checked.</h3>
+              <p>Names, dates and addresses are compared across every document by tested code. When two papers disagree, it comes to you as a single line with both pages one click away, before USCIS sees it.</p>
+              <span class="gain">The mismatch found on day one, not at the interview</span>
+            </div>
+            <div class="hs" data-v="3">
+              <span class="n">04</span>
+              <h3>USCIS forms, drafted and sourced.</h3>
+              <p>The I-130 and I-485 are filled on USCIS's own PDF forms, current edition, from the documents, the questionnaire and your call notes. Every answer shows where it came from. Only settled answers go in; signatures stay yours, in ink.</p>
+              <span class="gain">Hundreds of boxes you no longer type</span>
+            </div>
+            <div class="hs" data-v="4">
+              <span class="n">05</span>
+              <h3>A package ready to sign and mail.</h3>
+              <p>Cover letter, G-28, fees, forms in USCIS's order and tabbed evidence, assembled for you. Arcadia marks every place to sign and checks that each signed page came back before it goes in the envelope.</p>
+              <span class="gain">Days, not weeks, to a complete filing</span>
+            </div>
+            <div class="hs" data-v="5">
+              <span class="n">06</span>
+              <h3>Watched after filing.</h3>
+              <p>The parcel is tracked until the receipt notice. Every notice is read, every date goes on Today with your firm's lead time, and when a case is due for its next step, Arcadia puts it in front of you.</p>
+              <span class="gain">No deadline living in someone's head</span>
+            </div>
           </div>
 
-          <div class="story-stage" aria-hidden="true">
-            <div class="scene scene-read is-active" data-scene="0">
-              <div class="scene-inner">
-                <div class="doc-read">
-                  <div class="paper-doc">
-                    <div class="photo"></div>
-                    <div class="lines"><i></i><i></i><i></i><i></i><i></i></div>
-                    <span class="name">passport.pdf</span>
-                    <span class="scan"></span>
-                  </div>
-                  <div class="facts">
-                    <div class="fact"><small>Family name</small><strong>LIN</strong><span class="source"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 1.5h5l3 3v10H4z"/><path d="M9 1.5v3h3"/></svg>passport.pdf &middot; page 2</span></div>
-                    <div class="fact"><small>Given name</small><strong>MEI</strong><span class="source"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 1.5h5l3 3v10H4z"/><path d="M9 1.5v3h3"/></svg>passport.pdf &middot; page 2</span></div>
-                    <div class="fact"><small>Date of birth</small><strong>03/08/1994</strong><span class="source"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 1.5h5l3 3v10H4z"/><path d="M9 1.5v3h3"/></svg>passport.pdf &middot; page 2</span></div>
-                    <div class="fact"><small>Date of marriage</small><strong>06/14/2024</strong><span class="source"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 1.5h5l3 3v10H4z"/><path d="M9 1.5v3h3"/></svg>marriage-certificate.pdf &middot; page 1</span></div>
+          <div class="hv" aria-hidden="true">
+            <div class="vis on" data-vis="0">
+              <div style="width:100%">
+                <div class="card">
+                  <div class="ct">Your note<small>NEW CASE</small></div>
+                  <p class="note-hand">Marriage case, adjust status here. I-130 with I-485, I-765 and I-131. She entered on a B-2 in 2023. Get the final divorce decree from her first marriage.</p>
+                </div>
+                <div class="arrow-d"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 4v16M6 14l6 6 6-6"/></svg></div>
+                <div class="card">
+                  <div class="ct">The plan<small>FOR YOU TO CONFIRM</small></div>
+                  <div class="grid2">
+                    <span class="pill">Forms<b>4</b></span>
+                    <span class="pill">Documents to collect<b>11</b></span>
+                    <span class="pill">Client to-dos<b>6</b></span>
+                    <span class="pill">First message<b>ES</b></span>
                   </div>
                 </div>
-                <p class="compare-note"><span class="chip chip-ai">AI processing</span></p>
               </div>
             </div>
-
-            <div class="scene scene-check" data-scene="1">
-              <div class="scene-inner">
-                <div class="compare">
-                  <div class="compare-head"><span>Fact</span><span>Passport</span><span>Certificate</span><span></span></div>
-                  <div class="compare-row"><span>Date of birth</span><span>03/08/1994</span><span>03/08/1994</span><span class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></div>
-                  <div class="compare-row"><span>Nationality</span><span>China</span><span>China</span><span class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></div>
-                  <div class="compare-row"><span>Spouse</span><span>ORTEGA</span><span>ORTEGA</span><span class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></div>
-                  <div class="compare-row is-flagged"><span>Name order</span><span>LIN MEI</span><span>MEI LIN</span><span class="flag">!</span></div>
+            <div class="vis" data-vis="1">
+              <div class="row2">
+                <div class="phone">
+                  <div style="font-size:12px;color:var(--ink-3);margin-bottom:10px">Chat with your firm</div>
+                  <div class="photo-ph"></div>
+                  <div style="font-size:12px;color:var(--ink-3);margin-top:8px;text-align:right">IMG_2291.jpg · sent</div>
                 </div>
-                <p class="compare-note">The same facts give the same result, every time. One difference goes to the attorney.</p>
+                <div class="card" style="flex:1">
+                  <div class="ct">Upload check<small>IN SECONDS</small></div>
+                  <div class="vline"><span class="ok"></span><span class="k">Legible</span><span class="v">Yes</span></div>
+                  <div class="vline"><span class="ok"></span><span class="k">Complete</span><span class="v">All pages</span></div>
+                  <div class="vline"><span class="ok"></span><span class="k">Document</span><span class="v">Birth certificate</span></div>
+                  <div class="vline"><span class="ok"></span><span class="k">Person</span><span class="v">Mariana Reyes Castillo</span></div>
+                  <div class="vline"><span class="ok"></span><span class="k">Filed to</span><span class="v">Whitfield &amp; Reyes Castillo</span></div>
+                </div>
               </div>
             </div>
-
-            <div class="scene scene-decide" data-scene="2">
-              <div class="scene-inner">
-                <div class="ui-card decide">
-                  <p class="eyebrow-dot">For the attorney</p>
-                  <h4>Name order differs</h4>
-                  <p>The passport lists LIN MEI. The marriage certificate lists MEI LIN.</p>
-                  <div class="sources">
-                    <span class="source"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 1.5h5l3 3v10H4z"/><path d="M9 1.5v3h3"/></svg>passport.pdf &middot; page 2</span>
-                    <span class="source"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 1.5h5l3 3v10H4z"/><path d="M9 1.5v3h3"/></svg>marriage-certificate.pdf &middot; page 1</span>
-                  </div>
-                  <div class="ui-actions"><span class="ui-btn solid">Confirm correct</span><span class="ui-btn">Ask the client</span></div>
-                  <p class="fine">Every override records who confirmed it and why.</p>
-                </div>
-                <div class="signed"><svg class="monogram" viewBox="0 0 76.69 100" aria-hidden="true"><use href="assets/brand/sprite.svg#monogram"/></svg><span>The dot marks every place a person must act.</span></div>
+            <div class="vis" data-vis="2">
+              <div class="card">
+                <div class="ct">Cross-check<small>8 DOCUMENTS</small></div>
+                <table class="cmp">
+                  <tr><th>Fact</th><th>Passport</th><th>Marriage cert.</th><th>Questionnaire</th></tr>
+                  <tr><td>Date of birth</td><td>04/18/1995</td><td>04/18/1995</td><td>04/18/1995</td></tr>
+                  <tr><td>Place of birth</td><td>Guadalajara</td><td>Guadalajara</td><td>Guadalajara</td></tr>
+                  <tr class="diff"><td>Family name</td><td>REYES CASTILLO</td><td class="bad">REYES CASTILO</td><td>REYES CASTILLO</td></tr>
+                  <tr><td>Address</td><td>—</td><td>412 Alder St</td><td>412 Alder St</td></tr>
+                </table>
+                <div class="vline" style="margin-top:8px"><span class="x"></span><span>Name spelled differently on the marriage certificate (p.1). Confirm with the attorney.</span></div>
+              </div>
+            </div>
+            <div class="vis" data-vis="3">
+              <div class="card">
+                <div class="ct">Form I-485<small>USCIS EDITION · DRAFT FOR REVIEW</small></div>
+                <div class="vline"><span class="k">Family name</span><span class="v">REYES CASTILLO</span><span class="src">Passport · p.1</span></div>
+                <div class="vline"><span class="k">Date of birth</span><span class="v">04/18/1995</span><span class="src">Birth cert. · p.1</span></div>
+                <div class="vline"><span class="k">Last arrival</span><span class="v">09/04/2023</span><span class="src">Form I-94 · p.1</span></div>
+                <div class="vline"><span class="k">Visa number</span><span class="v">from your call</span><span class="src">Call notes · Nov 4</span></div>
+                <div class="vline"><span class="k">Signature</span><span class="v" style="color:var(--ink-3)">left empty for ink</span></div>
+              </div>
+            </div>
+            <div class="vis" data-vis="4">
+              <div class="card">
+                <div class="ct">Filing package<small>IN USCIS'S ORDER</small></div>
+                <div class="vline"><span class="ok"></span><span>Cover letter</span></div>
+                <div class="vline"><span class="ok"></span><span>Form G-28 and filing fees</span></div>
+                <div class="vline"><span class="ok"></span><span>Forms I-130, I-485, I-765, I-131</span></div>
+                <div class="vline"><span class="ok"></span><span>Evidence, tabbed A to H</span></div>
+                <div class="vline"><span class="x"></span><span>2 signed pages to check back in</span><span class="src">Signature map</span></div>
+              </div>
+            </div>
+            <div class="vis" data-vis="5">
+              <div class="card">
+                <div class="ct">After filing<small>WATCHED FOR YOU</small></div>
+                <ul class="track">
+                  <li class="done">Mailed<small>Nov 12</small></li>
+                  <li class="done">Delivered to USCIS<small>Nov 14</small></li>
+                  <li class="done">Receipt notices read<small>Nov 26</small></li>
+                  <li class="now">Biometrics appointment, on Today<small>Dec 18</small></li>
+                  <li>Interview notice<small>watched</small></li>
+                </ul>
               </div>
             </div>
           </div>
@@ -189,222 +409,206 @@
       </div>
     </section>
 
-    <!-- What changes -->
-    <section class="section" aria-labelledby="outcomes-title">
+    <!-- Why Arcadia -->
+    <section class="why dark" id="why" aria-labelledby="why-title">
       <div class="wrap">
-        <div class="head reveal">
-          <p class="label">What changes</p>
-          <h2 class="h2" id="outcomes-title">More cases without more hires.</h2>
-          <p class="lede">Your team stops copying, chasing and re-checking. Your attorneys review finished work, not unfinished files.</p>
+        <p class="label rv">Why Arcadia</p>
+        <h2 class="rv d1" id="why-title">Legacy software stores your cases.<br class="br-d"> Arcadia works them.</h2>
+        <p class="lede rv d2">Most case software is a filing cabinet with a login. You still do the work, and you pay for it to sit there. Arcadia is built to do the work, and to show you only what needs your judgment.</p>
+        <div class="vs">
+          <div class="h"></div><div class="h">Case software today</div><div class="h us"><svg viewBox="0 0 405.59 100" role="img" aria-label="Arcadia"><use href="assets/brand/sprite.svg#wordmark"/></svg></div>
+          <div class="c t rv">Documents</div><div class="c old rv">A folder you sort and rename by hand.</div><div class="c new rv">Every file read, named and filed to the right case, with its dates and numbers.</div>
+          <div class="c t rv">Forms</div><div class="c old rv">Answers typed in, one box at a time.</div><div class="c new rv">I-130 and I-485 drafted on USCIS's own forms, every answer one click from its page.</div>
+          <div class="c t rv">Checking</div><div class="c old rv">Names and dates compared by eye, late at night.</div><div class="c new rv">Tested code compares every name, date and address. Same facts, same result, every time.</div>
+          <div class="c t rv">Deadlines</div><div class="c old rv">Entered by whoever remembers.</div><div class="c new rv">Read from every notice and put on Today, with your firm's lead time.</div>
+          <div class="c t rv">Clients</div><div class="c old rv">Status calls, scattered texts, WhatsApp.</div><div class="c new rv">One chat per case in English, Spanish or Chinese, every message confirmed by your staff.</div>
+          <div class="c t rv">Growth</div><div class="c old rv">More cases means another hire.</div><div class="c new rv">More cases with the team you have, and the hours given back counted, task by task.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The workspace: tiles that respond -->
+    <section class="ws" id="workspace" aria-labelledby="ws-title">
+      <div class="wrap">
+        <div class="ws-head">
+          <p class="label rv">The workspace</p>
+          <h2 class="rv d1" id="ws-title">A full support team,<br class="br-d"> built into the software.</h2>
+          <p class="lede rv d2">Arcadia carries the work you used to hand to paralegals and assistants, and puts in front of you only what needs a decision. A lean firm runs a full caseload, and every attorney can rely on the system, not on who is in the office today.</p>
         </div>
 
         <div class="bento">
-          <article class="tile tile-7 tile-photo reveal">
-            <img src="assets/img/photo/consult-window-1600.jpg" srcset="assets/img/photo/consult-window-960.jpg 960w, assets/img/photo/consult-window-1600.jpg 1600w" sizes="(max-width: 1080px) 100vw, 58vw" alt="" width="1600" height="1067" decoding="async" loading="lazy">
-            <h3>Days, not weeks.</h3>
-            <p>A verified, complete filing package, ready for attorney review and signature.</p>
+          <article class="tile w7 rv">
+            <p class="label">Today</p>
+            <h3>Your day, decided for you.</h3>
+            <p class="d">What to do and what to know, across every case, in one list. Tap a line to clear it.</p>
+            <div class="mini" id="today">
+              <button class="todo" type="button" aria-pressed="false"><span class="cb"></span><span class="t"><b>Turner &amp; Chen</b> · ready for your signature</span></button>
+              <button class="todo" type="button" aria-pressed="false"><span class="cb"></span><span class="t"><b>Brooks &amp; Ruiz Soto</b> · evidence request response</span><span class="w">Due Dec 7</span></button>
+              <button class="todo" type="button" aria-pressed="false"><span class="cb"></span><span class="t"><b>Kowalski &amp; Wang</b> · interview notice read</span><span class="w">Jan 14</span></button>
+              <button class="todo" type="button" aria-pressed="false"><span class="cb"></span><span class="t">3 payment reminders to send</span></button>
+            </div>
           </article>
 
-          <article class="tile tile-5 tile-sand reveal d1">
-            <h3>Every fact, sourced.</h3>
-            <p>Every form answer shows the document and page it came from, one click away.</p>
-            <div class="tile-ui" aria-hidden="true">
-              <div class="field-row">
-                <div><small>I-130 &middot; Part 2 &middot; 1.a</small><strong>Family name</strong></div>
-                <span class="value">LIN</span>
-                <div class="meta"><span class="source"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 1.5h5l3 3v10H4z"/><path d="M9 1.5v3h3"/></svg>passport.pdf &middot; page 2</span><span class="chip chip-ai">AI drafted</span><span class="ui-btn">Confirm</span></div>
+          <article class="tile w5 rv d1">
+            <p class="label">Cases</p>
+            <h3>Sorted by whose move it is.</h3>
+            <div class="mini">
+              <div class="tabs" id="ctabs" role="tablist">
+                <button class="on" type="button" role="tab" aria-selected="true" data-l="0">Firm <span class="ct">3</span></button>
+                <button type="button" role="tab" aria-selected="false" data-l="1">Attorney <span class="ct">1</span></button>
+                <button type="button" role="tab" aria-selected="false" data-l="2">Client <span class="ct">2</span></button>
+                <button type="button" role="tab" aria-selected="false" data-l="3">USCIS <span class="ct">1</span></button>
+              </div>
+              <div class="clist on">
+                <div class="crow"><div><b>Brooks &amp; Ruiz Soto</b><small>Evidence request</small></div><span class="due">Due · Dec 7</span><span class="p">92</span></div>
+                <div class="crow"><div><b>Whitfield &amp; Reyes Castillo</b><small>Needs you · 1</small></div><span class="due">Passport · Feb 10</span><span class="p">86</span></div>
+                <div class="crow"><div><b>Morrison &amp; Paredes Vega</b><small>Reading 6 of 11</small></div><span class="due calm">New</span><span class="p">54</span></div>
+              </div>
+              <div class="clist">
+                <div class="crow"><div><b>Turner &amp; Chen</b><small>Ready for your signature</small></div><span class="due calm">Today</span><span class="p">100</span></div>
+              </div>
+              <div class="clist">
+                <div class="crow"><div><b>Novak &amp; Ibarra</b><small>2 documents requested</small></div><span class="due calm">Asked Nov 6</span><span class="p">62</span></div>
+                <div class="crow"><div><b>Haddad &amp; Moreno</b><small>Questionnaire sent</small></div><span class="due calm">Asked Nov 9</span><span class="p">40</span></div>
+              </div>
+              <div class="clist">
+                <div class="crow"><div><b>Kowalski &amp; Wang</b><small>Interview scheduled</small></div><span class="due calm">Jan 14</span><span class="p">100</span></div>
               </div>
             </div>
           </article>
 
-          <article class="tile tile-5 tile-dark reveal">
-            <h3>Every date in sight.</h3>
-            <p>Arcadia reads the dates on every notice and document and puts them in front of your team before they matter.</p>
-            <div class="tile-ui" aria-hidden="true">
-              <ul class="dates">
-                <li><time>Nov 13</time><span>Biometrics appointment</span><span class="in soon">in 9 days</span></li>
-                <li><time>Nov 25</time><span>Interview appointment</span><span class="in">in 21 days</span></li>
-                <li><time>Nov 30</time><span>Response to a request for evidence</span><span class="in">in 26 days</span></li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="tile tile-7 tile-photo reveal d1">
-            <img src="assets/img/photo/notes-1600.jpg" srcset="assets/img/photo/notes-960.jpg 960w, assets/img/photo/notes-1600.jpg 1600w" sizes="(max-width: 1080px) 100vw, 58vw" alt="" width="1600" height="1067" decoding="async" loading="lazy">
-            <h3>One workspace for the whole firm.</h3>
-            <p>Cases, clients, documents, forms and conversations in one place, so anyone on your team can pick up any case.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- A look inside -->
-    <section class="section dark tour" id="tour" aria-labelledby="tour-title">
-      <div class="wrap head-row">
-        <div class="head reveal">
-          <p class="label">A look inside</p>
-          <h2 class="h2" id="tour-title">Your whole practice, in one calm workspace.</h2>
-        </div>
-        <div class="tour-controls">
-          <button class="round" type="button" data-rail="prev" aria-label="Previous picture" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
-          <button class="round" type="button" data-rail="next" aria-label="Next picture"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
-        </div>
-      </div>
-
-      <div class="rail" tabindex="0" role="region" aria-label="Pictures of Arcadia, with fictional sample cases">
-        <figure class="slide">
-          <div class="shot-frame"><img class="fade" src="assets/img/command.jpg" width="1600" height="619" alt="The case dashboard, with cases grouped by where they stand." loading="lazy"></div>
-          <figcaption><strong>Case command center</strong><span>Every case at a glance: what's ready for review, what's waiting on the client, and what's filed and being watched.</span></figcaption>
-        </figure>
-        <figure class="slide">
-          <div class="shot-frame"><img class="fade" src="assets/img/deadlines.jpg" width="1600" height="661" alt="Upcoming dates across filed cases, such as appointments and a response due date, each with the notice it came from." loading="lazy"></div>
-          <figcaption><strong>Deadline watch</strong><span>Arcadia reads the dates on every notice and document and puts them in front of your team before they matter.</span></figcaption>
-        </figure>
-        <figure class="slide">
-          <div class="shot-frame"><img class="fade" src="assets/img/intake.jpg" width="1200" height="770" alt="Files dropped into Arcadia, each named and matched to a client's case, waiting for a person to confirm." loading="lazy"></div>
-          <figcaption><strong>Smart document intake</strong><span>Drop in a pile of files from anywhere. Arcadia names them, recognizes whose they are and files each to the right case for your team to confirm.</span></figcaption>
-        </figure>
-        <figure class="slide">
-          <div class="shot-frame"><img src="assets/img/ready.jpg" width="830" height="576" alt="A case at 100%, ready for the attorney's review and signature." loading="lazy"></div>
-          <figcaption><strong>Ready for attorney review</strong><span>Each case climbs to 100%: documents in, issues resolved, USCIS forms drafted from your client's information.</span></figcaption>
-        </figure>
-        <figure class="slide">
-          <div class="shot-frame"><img src="assets/img/assistant.jpg" width="600" height="775" alt="Arcadia AI answering a question about a case, with the page the answer came from." loading="lazy"></div>
-          <figcaption><strong>Arcadia AI</strong><span>Answers questions about any case with the page it came from, and speaks up before anyone asks. Legal questions go to your attorney.</span></figcaption>
-        </figure>
-        <figure class="slide">
-          <div class="shot-frame"><div class="shot-pair"><img src="assets/img/chat.jpg" width="1200" height="648" alt="A client's message in Spanish with its English translation for the firm." loading="lazy"><img src="assets/img/client.jpg" width="600" height="1070" alt="The client's view on a phone, in Chinese." loading="lazy"></div></div>
-          <figcaption><strong>Your clients, in their language</strong><span>One group chat per case and a simple client view in English, Spanish or Chinese, translated for your team.</span></figcaption>
-        </figure>
-      </div>
-
-      <div class="wrap tour-foot">
-        <p class="tour-note">Product images show fictional sample cases.</p>
-        <a class="link" href="product.html">Explore the product <span class="arrow" aria-hidden="true">&rarr;</span></a>
-      </div>
-    </section>
-
-    <!-- Clients in their language -->
-    <section class="section" id="clients" aria-labelledby="clients-title">
-      <div class="wrap clients">
-        <div class="clients-visual reveal">
-          <div class="clients-photo"><img src="assets/img/photo/family-poppies-1400.jpg" srcset="assets/img/photo/family-poppies-800.jpg 800w, assets/img/photo/family-poppies-1400.jpg 1400w" sizes="(max-width: 900px) 80vw, 42vw" alt="" width="1400" height="1746" decoding="async" loading="lazy"></div>
-          <div class="phone" data-lang-demo>
-            <div class="phone-screen" lang="en">
-              <div class="phone-top"><svg class="monogram" viewBox="0 0 75.88 100" aria-hidden="true"><use href="assets/brand/sprite.svg#monogram-small"/></svg><span data-i18n="title">Your case</span></div>
-              <div class="seg" role="group" aria-label="Language of the sample client view">
-                <button type="button" data-lang="en" aria-pressed="true">EN</button>
-                <button type="button" data-lang="zh" aria-pressed="false" lang="zh">中文</button>
-                <button type="button" data-lang="es" aria-pressed="false">ES</button>
+          <article class="tile rv">
+            <p class="label">Drop box</p>
+            <h3>Drop a pile. It sorts itself.</h3>
+            <div class="mini" style="padding:12px" aria-hidden="true">
+              <div class="sort">
+                <span class="fl" style="--x:2%;--dl:0s">IMG_2291.jpg</span>
+                <span class="fl" style="--x:36%;--dl:.5s">scan_0412.pdf</span>
+                <span class="fl" style="--x:70%;--dl:1s">notice.pdf</span>
+                <span class="bin b1">Whitfield<small>Birth certificate</small></span>
+                <span class="bin b2">Novak<small>Joint lease</small></span>
+                <span class="bin b3">Kowalski<small>Interview notice</small></span>
               </div>
-              <div class="p-card"><small data-i18n="progress">Progress</small><div class="meter" style="--p: 62%"><i></i></div></div>
-              <div class="p-card"><span data-i18n="msg">We received your marriage certificate.</span><div class="p-next"><span class="dot dot-review"></span><span data-i18n="next">Next step: please upload proof of a shared address.</span></div></div>
-              <div class="grow"></div>
-              <div class="p-btn" data-i18n="upload">Upload documents</div>
             </div>
+          </article>
+
+          <article class="tile rv d1">
+            <p class="label">Ask Arcadia</p>
+            <h3>Ask about any case.</h3>
+            <div class="mini q" id="askq">
+              <button class="qb" type="button" data-a="0">What's left for Whitfield &amp; Reyes Castillo?</button>
+              <button class="qb" type="button" data-a="1">What's coming up in the next 30 days?</button>
+              <div class="ans" id="ans" aria-live="polite"><span class="muted">Tap a question.</span></div>
+            </div>
+          </article>
+
+          <article class="tile rv d2">
+            <p class="label">Log a call</p>
+            <h3>Your call notes become the file.</h3>
+            <div class="mini" id="call">
+              <p class="callnote">Spoke with Daniel. They moved in together 3/1/2024. Renewed lease comes Friday. Medical exam booked Dec 1.</p>
+              <button class="cbtn" type="button">Continue</button>
+              <div class="callout" aria-live="polite">
+                <span class="pill"><span class="tg2">Form</span>I-130 · address since 03/01/2024</span>
+                <span class="pill"><span class="tg2">To-do</span>Collect the renewed lease<b>Fri</b></span>
+                <span class="pill"><span class="tg2">Date</span>Medical exam<b>Dec 1</b></span>
+              </div>
+            </div>
+          </article>
+
+          <article class="tile w6 ink rv">
+            <p class="label">Clients</p>
+            <h3>Every client, in their language.</h3>
+            <p class="d">One chat per case. Arcadia drafts in English, Spanish or Chinese; your staff confirms before anything is sent.</p>
+            <div class="mini">
+              <div class="seg" id="lang"><button class="on" type="button" aria-pressed="true" data-g="en">English</button><button type="button" aria-pressed="false" data-g="es">Español</button><button type="button" aria-pressed="false" data-g="zh">中文</button></div>
+              <div class="chat" aria-live="polite">
+                <div class="m f" id="langMsg">We received your marriage certificate. Next, please send proof that you live together, like a lease or a joint bank statement.<small>Draft · confirmed by your staff before sending</small></div>
+                <div class="m">Thank you! I'll send the lease tonight.</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="tile w6 rv d1">
+            <p class="label">Performance</p>
+            <h3>See what Arcadia gives back.</h3>
+            <p class="d">Hours given back, counted task by task, at your paralegal's hourly rate.</p>
+            <div class="mini" id="perf">
+              <div class="perf">
+                <div><span class="chip-tag">Sample firm</span><br><b style="display:inline-block;margin-top:10px"><span id="perfH">90</span> h</b><small>given back in the last 30 days</small></div>
+                <div class="m2"><b>$3,367</b><small>at $37.50 an hour</small></div>
+              </div>
+              <div class="bars" id="bars" aria-hidden="true"><i data-h="42"></i><i data-h="48"></i><i data-h="52"></i><i data-h="57"></i><i data-h="61"></i><i data-h="63"></i><i data-h="58"></i><i data-h="62"></i><i data-h="64"></i><i data-h="63"></i><i data-h="65"></i><i data-h="80"></i></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Built for trust -->
+    <section class="sec line" id="trust" aria-labelledby="trust-title">
+      <div class="wrap">
+        <p class="label rv">Built for trust</p>
+        <h2 class="rv d1" id="trust-title" style="margin:20px 0 clamp(48px,6vw,80px)">Your judgment stays yours.</h2>
+        <div class="quad">
+          <div class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg><h3>Sourced, every time.</h3><p>Every fact and form answer shows the document and page it came from.</p></div>
+          <div class="rv d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg><h3>You decide.</h3><p>Arcadia never gives legal advice, chooses strategy or files with USCIS. The legal call is always the attorney's.</p></div>
+          <div class="rv d2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 21l1.9-5.4A8 8 0 1 1 21 12z"/><path d="M9 12l2 2 4-4"/></svg><h3>Nothing goes out unconfirmed.</h3><p>Every message to a client is confirmed by your staff before it is sent.</p></div>
+          <div class="rv d3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><h3>Your clients stay yours.</h3><p>Made only for law firms. Client information is never sold.</p></div>
+        </div>
+        <p style="margin-top:44px" class="rv"><a class="link" href="security.html">Security and trust <span aria-hidden="true">&rarr;</span></a></p>
+      </div>
+    </section>
+
+    <!-- The founders -->
+    <section class="sec" id="people" style="padding-top:0" aria-labelledby="people-title">
+      <div class="wrap">
+        <p class="label rv">The people behind Arcadia</p>
+        <h2 class="rv d1" id="people-title" style="margin-top:20px">Built by people who've<br class="br-d"> lived the problem.</h2>
+        <div class="people">
+          <div class="person rv">
+            <h3>Murphy Wang</h3>
+            <p class="label role">Founder &amp; CEO</p>
+            <p class="bio">Murphy has worked as a paralegal, case manager and legal intake manager inside immigration law firms. He founded Arcadia to build the system he wished his firm had, so attorneys can spend their time practicing law.</p>
+            <a class="mail" href="mailto:murphy@arcadiaimmtech.com">murphy@arcadiaimmtech.com</a>
+          </div>
+          <div class="person rv d1">
+            <h3>Leon Li</h3>
+            <p class="label role">Co-founder &amp; CRO</p>
+            <p class="bio">Leon is a technology sales executive with a record of bringing software to market. He leads Arcadia's work with law firms.</p>
+            <a class="mail" href="mailto:leon.li@arcadiaimmtech.com">leon.li@arcadiaimmtech.com</a>
           </div>
         </div>
-        <div class="head reveal d1">
-          <p class="label">For your clients</p>
-          <h2 class="h2" id="clients-title">Your clients, in their language.</h2>
-          <p class="lede">A simple client view in English, Spanish or Chinese, one task at a time, with a group chat for every case, translated for your team.</p>
-          <ul class="checks">
-            <li><div><strong>Fewer &ldquo;what's the status?&rdquo; calls</strong>Clients see their progress and their next step without picking up the phone.</div></li>
-            <li><div><strong>Confirmed before it's sent</strong>Every message to a client is confirmed by your staff first.</div></li>
-            <li><div><strong>Only by invitation</strong>Clients use Arcadia only when your firm invites them.</div></li>
-          </ul>
-        </div>
       </div>
     </section>
 
-    <!-- Where Arcadia stops -->
-    <section class="section dark" aria-labelledby="stop-title">
-      <div class="wrap split">
-        <div class="split-photo reveal"><img src="assets/img/photo/consult-table-1600.jpg" srcset="assets/img/photo/consult-table-960.jpg 960w, assets/img/photo/consult-table-1600.jpg 1600w" sizes="(max-width: 900px) 100vw, 45vw" alt="" width="1600" height="1067" decoding="async" loading="lazy"></div>
-        <div class="reveal d1">
-          <p class="label">Where Arcadia stops</p>
-          <h2 class="h2" id="stop-title" style="margin-top: 22px">Built around your attorneys, never in their place.</h2>
-          <ul class="rules">
-            <li><strong>No legal advice.</strong><span>Arcadia never makes a legal judgment, chooses strategy or files with USCIS. Every legal call stays with your licensed attorneys.</span></li>
-            <li><strong>Nothing reaches a client unconfirmed.</strong><span>Every message to a client is confirmed by your staff before it's sent.</span></li>
-            <li><strong>Every override is recorded.</strong><span>Who confirmed it, and why, kept with the case.</span></li>
-            <li><strong>Made only for law firms.</strong><span>Your clients stay your clients. Flat, predictable pricing, never a share of your legal fees.</span></li>
-          </ul>
-          <a class="link" href="security.html">Security and trust <span class="arrow" aria-hidden="true">&rarr;</span></a>
-        </div>
+    <!-- The closing: a city at night -->
+    <section class="closing" aria-labelledby="close-title">
+      <div class="bg" data-drift><img src="assets/img/photo/la-night-1600.jpg" srcset="assets/img/photo/la-night-960.jpg 960w, assets/img/photo/la-night-1600.jpg 1600w, assets/img/photo/la-night-2400.jpg 2400w" sizes="100vw" alt="" width="1600" height="1067" loading="lazy" decoding="async"></div>
+      <div class="wrap center">
+        <h2 class="rv" id="close-title">See Arcadia on<br class="br-d"> your own cases.</h2>
+        <p class="lede rv d1">Murphy and Leon show Arcadia privately, one firm at a time, shaped around the cases you handle.</p>
+        <div class="row rv d2"><a class="btn btn-light" href="demo.html">Request a private demo <span class="arr" aria-hidden="true">&rarr;</span></a></div>
       </div>
     </section>
 
-    <!-- Los Angeles -->
-    <section class="band on-photo" aria-labelledby="name-title">
-      <div class="band-media"><img src="assets/img/photo/la-dusk-1600.jpg" srcset="assets/img/photo/la-dusk-960.jpg 960w, assets/img/photo/la-dusk-1600.jpg 1600w, assets/img/photo/la-dusk-2400.jpg 2400w" sizes="100vw" alt="" data-parallax width="2400" height="1440" decoding="async" loading="lazy"></div>
-      <div class="wrap">
-        <div class="head reveal">
-          <p class="label">Made in Los Angeles</p>
-          <h2 class="h2" id="name-title">Named for a place of peace and harmony.</h2>
-          <p class="lede">We build Arcadia for the firms that guide people through the hardest part of making a life in America.</p>
-          <a class="link" href="company.html">About Arcadia <span class="arrow" aria-hidden="true">&rarr;</span></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Closing invitation -->
-    <section class="band band-center on-photo" data-cta aria-labelledby="cta-title">
-      <div class="band-media"><img src="assets/img/photo/earth-night-1600.jpg" srcset="assets/img/photo/earth-night-960.jpg 960w, assets/img/photo/earth-night-1600.jpg 1600w, assets/img/photo/earth-night-2400.jpg 2400w" sizes="100vw" alt="" data-parallax width="2400" height="1597" decoding="async" loading="lazy"></div>
-      <div class="wrap">
-        <div class="head reveal">
-          <h2 class="h1" id="cta-title">See Arcadia with your kind of cases.</h2>
-          <p class="lede">A private, <span class="nowrap">30-minute</span> walkthrough with our founders, shaped around the cases your firm handles.</p>
-          <div class="actions">
-            <a class="btn btn-primary btn-lg" href="demo.html">Book a demo <span class="arrow" aria-hidden="true">&rarr;</span></a>
-            <a class="btn btn-secondary btn-lg" href="product.html">Explore the product</a>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <footer class="site-footer dark">
+  <footer class="site-foot">
     <div class="wrap">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <svg class="lockup" viewBox="0 0 457.69 100" role="img" aria-label="arcadia, Immigration Technology"><use href="assets/brand/sprite.svg#lockup-horizontal"/></svg>
-          <p class="footer-statement">Arcadia informs.<br>Attorneys advise.</p>
-          <a class="btn btn-primary" href="demo.html">Book a demo <span class="arrow" aria-hidden="true">&rarr;</span></a>
-        </div>
-        <nav class="footer-cols" aria-label="Footer">
-          <div>
-            <h2 class="label">Product</h2>
-            <a href="product.html">Overview</a>
-            <a href="index.html#how">How it works</a>
-            <a href="product.html#features">Features</a>
-            <a href="product.html#clients">Client view</a>
-          </div>
-          <div>
-            <h2 class="label">Company</h2>
-            <a href="company.html">About Arcadia</a>
-            <a href="company.html#founders">Founders</a>
-            <a href="security.html">Security and trust</a>
-            <a href="demo.html#faq">Questions</a>
-          </div>
-          <div>
-            <h2 class="label">Contact</h2>
-            <a href="demo.html">Book a demo</a>
-            <a href="mailto:murphy@arcadiaimmtech.com">murphy@arcadiaimmtech.com</a>
-            <a href="mailto:leon.li@arcadiaimmtech.com">leon.li@arcadiaimmtech.com</a>
-            <span>Los Angeles, California</span>
-          </div>
-        </nav>
+      <div class="foot">
+        <div><a class="brand-f" href="index.html" aria-label="Arcadia, home"><svg viewBox="0 0 405.59 100" aria-hidden="true"><use href="assets/brand/sprite.svg#wordmark"/></svg></a><p class="motto">The AI case workspace for immigration law firms.</p></div>
+        <nav aria-label="Product"><h2>Product</h2><a href="index.html#try">Try it</a><a href="product.html">Overview</a><a href="index.html#how">How it works</a><a href="security.html">Security and trust</a></nav>
+        <nav aria-label="Company"><h2>Company</h2><a href="company.html">About Arcadia</a><a href="company.html#founders">Founders</a><a href="demo.html#faq">Questions</a></nav>
+        <nav aria-label="Contact"><h2>Contact</h2><a href="demo.html">Request a demo</a><a href="mailto:murphy@arcadiaimmtech.com">murphy@arcadiaimmtech.com</a><a href="mailto:leon.li@arcadiaimmtech.com">leon.li@arcadiaimmtech.com</a></nav>
       </div>
-      <div class="footer-bottom">
+      <div class="legal">
         <p>Arcadia is not a law firm and does not provide legal advice. It works for licensed immigration attorneys, who make every legal decision.</p>
         <p>&copy; 2026 Arcadia Immigration Technology, Inc. &middot; <a href="privacy.html">Privacy</a></p>
       </div>
     </div>
   </footer>
-  <!-- On phones: the demo request, always one tap away. -->
-  <a class="mobile-cta" href="demo.html" aria-hidden="true" tabindex="-1">Book a demo <span aria-hidden="true">&rarr;</span></a>
 
-  <script src="assets/site.js" defer></script>
+  <script src="assets/site.js"></script>
 </body>
 </html>
