@@ -83,6 +83,7 @@ onFrame();
 const menuButton = $(".menu");
 if (menuButton) {
   const setMenu = (open) => {
+    header.classList.add("used"); // the sheet animates only once someone has opened it, not when a window is resized
     header.classList.toggle("open", open);
     document.body.classList.toggle("menu-open", open);
     menuButton.setAttribute("aria-expanded", String(open));
@@ -97,7 +98,9 @@ if (menuButton) {
     menuButton.focus();
   });
   window.matchMedia("(min-width: 901px)").addEventListener("change", (event) => {
-    if (event.matches) setMenu(false);
+    if (!event.matches) return;
+    setMenu(false);
+    header.classList.remove("used");
   });
 }
 

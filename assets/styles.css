@@ -115,7 +115,8 @@ nav.main .btn { padding: 12px 20px; font-size: 14.5px; background: var(--ink); c
   .brand svg { height: 21px; }
   .menu { display: block; }
   .cta-m { display: inline-flex; margin-left: auto; padding: 11px 16px; font-size: 14px; background: var(--ink); color: #fff; }
-  nav.main { position: fixed; top: var(--head); left: 0; right: 0; height: calc(100vh - var(--head)); height: calc(100dvh - var(--head)); flex-direction: column; align-items: stretch; gap: 0; padding: 18px var(--gut) 40px; background: #fff; color: var(--ink); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 0.3s var(--ease), transform 0.3s var(--ease), visibility 0.3s; overflow-y: auto; }
+  nav.main { position: fixed; top: var(--head); left: 0; right: 0; height: calc(100vh - var(--head)); height: calc(100dvh - var(--head)); flex-direction: column; align-items: stretch; gap: 0; padding: 18px var(--gut) 40px; background: #fff; color: var(--ink); opacity: 0; visibility: hidden; transform: translateY(-8px); overflow-y: auto; }
+  .site.used nav.main { transition: opacity 0.3s var(--ease), transform 0.3s var(--ease), visibility 0.3s; }
   nav.main a:not(.btn) { font-size: 30px; font-weight: 600; letter-spacing: -0.025em; padding: 16px 0; border-bottom: 1px solid var(--line); opacity: 1; }
   nav.main .btn { margin-top: 32px; align-self: flex-start; padding: 17px 26px; font-size: 16px; }
   .site.open { background: #fff; color: var(--ink); -webkit-backdrop-filter: none; backdrop-filter: none; }
