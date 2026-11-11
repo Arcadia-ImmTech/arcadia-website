@@ -7,7 +7,7 @@ The public marketing site for law firms. Plain HTML and CSS: no build step, no s
 ## Pages
 | Page | What it is |
 |---|---|
-| `index.html` | Home: a full-screen city photograph with the headline, the statement that lights up as you scroll, "Prepare a case in four clicks" (a working miniature of Arcadia with a fictional sample case), how Arcadia works (six steps beside a picture that changes as you scroll), why Arcadia, the workspace (tiles that respond), built for trust, the founders, and the closing invitation over the city at night |
+| `index.html` | Home: a full-screen city photograph that stays in place while the product rises over it, the statement that lights up as you scroll, "Prepare a case in four clicks" on a dark stage (a working miniature of Arcadia with a fictional sample case: drag the files in, and it times you), how Arcadia works (six panels that move sideways as you scroll), why Arcadia (a switch from legacy software to Arcadia), the workspace (tiles that respond, with a command bar you can type in), "Count it for your firm" (a slider on Arcadia's own estimate), built for trust, the founders, and the closing invitation over the city at night |
 | `product.html` | The AI case workspace: the six steps, five features with pictures of the product (fictional sample cases), and what else is built in |
 | `security.html` | Security and trust: where Arcadia stops, your clients' information, how Arcadia writes |
 | `company.html` | What we believe, who we serve, the founders |
@@ -20,7 +20,8 @@ Every page carries the same header (logo, Try it, Product, Security, Company, Re
 | File | What it is |
 |---|---|
 | `assets/styles.css` | Brand colors, type and the layout of every page |
-| `assets/site.js` | The only script: the header over the photograph, the phone menu, sections rising into view, the statement lighting up, the four-click miniature, the scrolling story, the workspace tiles, the demo request form. No tracking |
+| `assets/site.js` | The script every page uses: the header over the photograph, the phone menu, sections rising into view, the statement lighting up, the demo request form. No tracking |
+| `assets/home.css`, `assets/home.js` | The home page's own pieces: the pinned opening, the four-click miniature, the sideways story, the switch, the workspace tiles, the slider. No tracking, nothing sent anywhere |
 | `assets/brand/` | The logo as vector files, taken from the Brand Identity Packet's own artwork (see below) |
 | `assets/img/product/*.jpg` | Pictures of the product with fictional sample cases |
 | `assets/img/photo/` | Photographs, each at two or three widths for phones and large screens |
